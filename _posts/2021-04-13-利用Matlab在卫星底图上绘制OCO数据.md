@@ -12,19 +12,17 @@ tags:
 ---
 
 
-# 利用Matlab在卫星底图上绘制OCO数据
 
-Matlab提供了接口可以在线绘制各种底图，这里以绘制OCO-2卫星的XCO2为例进行展示。
---
+
 
 
 ---
 
-## 一、OCO-2数据读取
+# 一、OCO-2数据读取
 **[这里](https://disc.gsfc.nasa.gov/datasets/OCO2_L2_Diagnostic_10r/summary?keywords=OCO2)可以下载OCO-2的数据,批量下载的操作可以参考[这里](https://blog.csdn.net/peisipand/article/details/108224156?spm=1001.2014.3001.5501)。**
 
 OCO-2的数据通常以nc和h5的格式存储，h5较于nc存储了更多的信息。
-以下展示了nc的读取，并用m_map工具箱进行绘制。
+## 1.1以下展示了nc的读取，并用m_map工具箱进行绘制。
 ```bash
 clc;
 clear;
@@ -53,7 +51,7 @@ caxis([407 414])
 绘制如图所示
 ![picture1](/img/plot_nc.jpg)
 
-下面是读取h5。
+## 1.2下面是读取h5。
 ```bash
 clc;
 clear;
@@ -68,7 +66,7 @@ lon = double(h5read(filename,'/RetrievalGeometry/retrieval_longitude'));
 ```
 
 
-## 二、添加卫星底图
+# 二、添加卫星底图
 
 
 ```bash
