@@ -1,103 +1,83 @@
 ---
 layout:     post
-title:      Install TensorFlow-GPU by Anaconda (conda install tensorflow-gpu)
-subtitle:   It might be the simplest way to install Tensorflow or Tensorflow-GPU by conda install in the conda environment
-date:       2021-04-04
+title:      利用Matlab在卫星底图上绘制OCO数据
+subtitle:   Matlab提供了接口可以在线绘制各种底图，这里以绘制OCO-2卫星的XCO2为例进行展示。
+date:       2021-04-13
 author:     Zhipeng Pei
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
 tags:
-    - ubuntu
-    - TensorFlow
-    - 深度学习
-    - CUDA
+    - Matlab
+    - OCO
 ---
 
 
-# Install TensorFlow-GPU by Anaconda (conda install tensorflow-gpu)
+# 利用Matlab在卫星底图上绘制OCO数据
 
-It might be the simplest way to install Tensorflow or Tensorflow-GPU by conda install in the conda environment  
+Matlab提供了接口可以在线绘制各种底图，这里以绘制OCO-2卫星的XCO2为例进行展示。
 --
 
-Nowadays, there are many tutorials that instruct how to install tensorflow or tensorflow-gpu. However, some people may feel it too complex just like me, because in those ways, you should download and install [NVIDIA drivers](https://www.nvidia.com/Download/index.aspx?lang=en-us), and then download and install [CUDA](https://developer.nvidia.com/cuda-downloads) (users need to pay attention to the version), afterwards you may sign an agreement and download cuDNN in [NVIDIA Developer](https://developer.nvidia.com/cudnn). Next, install python, and pip install tensorflow-gpu and so on. It's not esay for developer to do these, let alone it might causes some other error such as **version not match**, or **conflict between other python libraries** and so on. Moreover, if you want to [install tensorflow by compilation](https://www.tensorflow.org/install/gpu), it may take much more time.  
-
-Thus I strongly reconmend you not to do this, there's a much easier way to install this. Please read the following article.
 
 ---
 
-## Install Anaconda
->[Anaconda](https://www.anaconda.com/) is a free and open-source distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment.   
+## 一、OCO-2数据读取
+**[这里](https://disc.gsfc.nasa.gov/datasets/OCO2_L2_Diagnostic_10r/summary?keywords=OCO2)可以下载OCO-2的数据,批量下载的操作可以参考[这里](https://blog.csdn.net/peisipand/article/details/108224156?spm=1001.2014.3001.5501)。**
 
-**You can download anaconda [here](https://www.anaconda.com/distribution/#download-section).**
+OCO-2的数据通常以nc和h5的格式存储，h5较于nc存储了更多的信息。
+以下展示了nc的读取，并用m_map工具箱进行绘制。
+```bash
+clc;
+clear;
+filename = 'F:\研究生\深圳碳中和会议\experiment\data\oco2_LtCO2_180225_B10206Ar_200730003152s.nc4';
+lat = ncread(filename,'latitude');
+lon = ncread(filename,'longitude');
+xco2 = ncread(filename,'xco2');
+windspeed_u_met = ncread(filename,'Meteorology/windspeed_u_met');
+windspeed_v_met = ncread(filename,'Meteorology/windspeed_v_met');
 
-One of the advantage of anaconda is that it can create **isolated environment** in your device, and you can configure any libraries and toolkits in the 'env' without affect other environment. Once you are nor satisfied of your configuration, you can simplily delete the environment.
+lon_limit = [118 122];
+lat_limit = [38 41];
+id = (lat > lat_limit(1)) & (lat < lat_limit(2)) & (lon > lon_limit(1)) & (lon < lon_limit(2));%筛选出研究区内的数据
+all = [lat(id,:) lon(id,:) xco2(id,:) windspeed_u_met(id,:) windspeed_v_met(id,:)];
 
-Note that in you are in **China**, download anaconda might take a long time due to some resons that cannot say. Instead, you can download it from [**Tsinghua mirror**](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/), and install it **manually**.  
+figure(1)
+m_proj('mercator', 'longitudes', lon_limit, 'latitudes', lat_limit)
+m_grid('box','on', 'linestyle', 'none', 'tickdir', 'out', 'linewidth', 3, 'FontName','Times New Roman','fontsize',15);
+m_mapshow('E:\MeteoInfo\map\country.shp')
+hold on;
+m_scatter(all(:,2),all(:,1),30,all(:,3) ,'filled', 'MarkerFaceColor', 'flat', 'MarkerEdgeColor', 'w','linewi',1) ;% lon, lat, 点的大小， 点的颜色映射， 实心
+colormap(m_colmap('jet','step',10))
+colorbar('FontName','Times New Roman','fontsize',15)
+caxis([407 414])
+```
+绘制如图所示
+![picture1](/img/plot_nc.jpg)
 
-After downloading this successfully, try to run the installation file.
-For example, if you use ubuntu, you can cd to the path of the sh file and run the following command:
+下面是读取h5。
+```bash
+clc;
+clear;
+filename = 'F:\研究生\主动反演\OCO\利雅得\oco2_L2DiaGL_02624a_141229_B10004r_200111134405.h5';  %oco2_L2DiaGL_25017a_190316_B10004r_200501022851
+% h5disp(filename);
+% attribute = h5readatt('文件名.hdf', '数据集名', '属性名');
+% data = h5read('文件名.hdf', '数据集名');
+xco2 = double(h5read(filename,'/RetrievalResults/xco2'));
+co2_profile = double(h5read(filename,'/RetrievalResults/co2_profile'));
+lat = double(h5read(filename,'/RetrievalGeometry/retrieval_latitude'));
+lon = double(h5read(filename,'/RetrievalGeometry/retrieval_longitude'));
+```
+
+
+## 二、添加卫星底图
+
 
 ```bash
-./Anaconda3-5.3.1-Linux-x86_64.sh
+gx = geoaxes
+geoscatter(all(:,1),all(:,2),2,all(:,3))
+caxis([407 414])
+geobasemap streets
+% geobasemap satelite
+geolimits('manual')
+geolimits(lat_limit,lon_limit)
 ```
-***Attention that you should change the command above to your own installation file name.***
-
-Then you will successfully install Anaconda!
-
-## Create new environment by conda
-
-If you are unwilling to create conda environment (maybe because of lazy), you can skip this section. However, I strongly reconmend you to create this **for the convience in the future**.  
-
-Run the command below:
-```bash
-conda create -n tf
-```
-![picture1](/img/20190328post.jpg)
-
-'tf' is the name of your new conda environment, you can try other names as your own interest.
-
-For other management you conda env, you can read [this](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=environment).
-
-## Install Tensorflow
-
-First, you need to change to the env you have just built by conda:
-```bash
-source activete tf
-```
-![picture2](/img/20190328post2.jpg)  
-
-For Chinese users, before starting the installation, you may change the source of conda as the same reason before. For more details, read the webcite of [Tsinghua Mirror](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/).
-Chinese users should type in this:
-```bash
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-conda config --set show_channel_urls yes
-```
-
-
-Afterwards, type in the command to install TensorFlow you need:
-```bash
-conda install tensorflow-gpu
-```
-![picture3](/img/20190328post3.jpg)  
-
-If you want to install a specific version of tensorflow-gpu or cpu veison, you can change the command like this:
-```bash
-conda install tensorflow-gpu=1.10.0  #if you want to install 1.10.0 version
-conda install tensorflow  #if you want to install cpu version
-```
-After anaconda solve the environment, you just need to type in 'y' to confirm the installation.  
-
-Anaconda will **automatically** install other libs and toolkits needed by tensorflow(e.g. CUDA, and cuDNN), so you have no need to worry about this.
---
-
-Type in `python` to enter the python environment.
-```python
-import tensorflow as tf
-tf.__version__
-```
-When you see the version of tensorflow, such as 1.10.0, you have successfully install it.
-
-That's all, Thank you.
-
-If you encounter any problems, you can open an issue in the **Comment area**.
+![picture1](/img/plot_satelite.jpg)
