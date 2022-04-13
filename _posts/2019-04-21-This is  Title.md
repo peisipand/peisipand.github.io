@@ -3,7 +3,7 @@ layout:     post
 title:      This is title
 subtitle:   This is subtitle
 date:       2021-04-03
-author:     Zhipeng Pei
+author:     Peisipand
 header-img: img/post-bg-swift2.jpg
 catalog: true
 tags:
@@ -15,4 +15,4 @@ tags:
 
 content
 
-裴志鹏测试内容
+测试内容
