@@ -60,8 +60,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 173f144b6348e17aa5f7                            #生成的clientID
-  clientSecret: a44617c10edcf10ac8a0469b1f47532533e4f88c    #生成的clientSecret
+  clientID: 1438a3848a56124f7da4                            #生成的clientID
+  clientSecret: 3d45230273b1072f48e4a8b2c35e8a8a27f9e9c2    #生成的clientSecret
   repo: peisipand.github.io    #仓库名称
   owner: peisipand     #github用户名
   admin: peisipand
