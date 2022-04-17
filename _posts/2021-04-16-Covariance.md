@@ -57,6 +57,7 @@ $$
 \sigma(X1,X2) & \sigma(X2,X2)\
 \end{bmatrix}
 $$
+
 &emsp;&emsp;协方差矩阵始终是一个对称矩阵，其对角线上是方差，非对角线上是协方差。
 # 概率密度
 &emsp;&emsp;现在已知了均值和协方差矩阵，如果我们可以绘制出图3的那种分布图，模拟一次测量，模拟一次测量值即可以等效为从该图中随机挑选了一个点，这个点的坐标即为测量值。
@@ -69,6 +70,7 @@ $$
 其中$|\Sigma|$表示$\Sigma$的行列式。此处用二元正态分布实例化这个分布，另$X={(x_1,x_2)}^T$，即包含两个随机变量$x_1$和$x_2$。
 ## 已知概率密度函数如何生成随机数
 &emsp;&emsp;常用的两种方法包括 逆分布函数法 (Inverse Transform Method) 和 舍选法 (Acceptance-Rejection Method)[参考链接](https://blog.csdn.net/m0_46145808/article/details/106019301)。
+
 &emsp;&emsp;这里以舍选法为例做展示。，注意这里要是用的随机函数必须是均匀分布（在matlab中要用unifrnd）。
 ![picture1](/img/covariance/5.jpg "图5")
 
