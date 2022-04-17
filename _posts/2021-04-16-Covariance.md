@@ -38,9 +38,11 @@ $$
 ![picture1](/img/covariance/1.jpg "图1")
 
 &emsp;&emsp;样本方差的无偏估计可由下式获得：
+
 $$
 \sigma_x = \sigma(x,x) = \frac{1}{N}\ \sum_{i=1}^{N}(x_i - \mu)^2 
 $$
+
 &emsp;&emsp;然而，方差只能用于解释平行于特征空间轴方向的数据传播，对于图2所示的二维特征空间，X1和X2不相关。
 ![picture1](/img/covariance/4.jpg "图2")
 
@@ -71,7 +73,7 @@ $$
 ## 已知概率密度函数如何生成随机数
 &emsp;&emsp;常用的两种方法包括 逆分布函数法 (Inverse Transform Method) 和 舍选法 (Acceptance-Rejection Method)[参考链接](https://blog.csdn.net/m0_46145808/article/details/106019301)。
 
-&emsp;&emsp;这里以舍选法为例做展示。，注意这里要是用的随机函数必须是均匀分布（在matlab中要用unifrnd）。
+&emsp;&emsp;这里以舍选法为例做展示。注意这里要是用的随机函数必须是均匀分布（在matlab中要用unifrnd）。
 ![picture1](/img/covariance/5.jpg "图5")
 
 # matlab自带的函数
