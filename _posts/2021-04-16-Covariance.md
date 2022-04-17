@@ -35,7 +35,7 @@ $$
 &emsp;&emsp;对于标量（表示的是单独的 1 个数）而言，如果样本满足正态分布 $X\sim N(\mu ,\sigma)$，标准差$\sigma$决定了数据分布的幅度，如图1所示。举个例子：假如我在上帝视角下知道一个桌子的真实长度（2米），现在有一把尺子（精度是0.01米），那么一个模拟的测量值就可以表示为10+normrand(0,0.01)。只有当我们做了越来越多次重复测量时，才能尽可能得获得这个桌子的真实长度（多次测量求均值）。如果只进行了一次模拟观测，那么这一次的观测值可以理解为在很多数里面随机挑选了一个出来。
 
 <div align=center>
-<img src=/img/Covariance/1.jpg/>
+<img src=/img/covariance/1.jpg/>
 <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -51,7 +51,7 @@ $$
 $$
 &emsp;&emsp;然而，方差只能用于解释平行于特征空间轴方向的数据传播，对于图2所示的二维特征空间，X1和X2不相关。
 <div align=center>
-<img src=/img/Covariance/4.jpg/>
+<img src=/img/covariance/4.jpg/>
 <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -63,7 +63,7 @@ $$
 
 &emsp;&emsp;对于下图的二维特征空间，数据存在明显的相关性，即当X1大的时候，X2往往也会比较大。
 <div align=center>
-<img src=/img/Covariance/2.jpg/>
+<img src=/img/covariance/2.jpg/>
 <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -74,7 +74,7 @@ $$
 </div>
 &emsp;&emsp;其对应的概率函数如下图，上图是下图在X1-X2平面的投影
 <div align=center>
-<img src=/img/Covariance/3.jpg/>
+<img src=/img/covariance/3.jpg/>
 <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -106,13 +106,13 @@ $$
 &emsp;&emsp;常用的两种方法包括 逆分布函数法 (Inverse Transform Method) 和 舍选法 (Acceptance-Rejection Method)[参考链接](https://blog.csdn.net/m0_46145808/article/details/106019301)。
 &emsp;&emsp;这里以舍选法为例做展示。，注意这里要是用的随机函数必须是均匀分布（在matlab中要用unifrnd）。
 <div align=center>
-<img src=/img/Covariance/5.jpg/>
+<img src=/img/covariance/5.jpg/>
 <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">
-      图4 舍选法
+      图5 舍选法
   	</div>
 </div>
 
