@@ -86,4 +86,4 @@ plot([hi pwf])
 # Reference
 1.The ACOS CO2 retrieval algorithm – Part 1: Description and validation against synthetic observations. Connor et al. (2008)
 
-2.Orbiting Carbon Observatory: Inverse method and prospective error analysisOrbiting Carbon Observatory: Inverse method and prospective error analysis
+2.Orbiting Carbon Observatory: Inverse method and prospective error analysisOrbiting Carbon Observatory: Inverse method and prospective error analysis. O’Dell et al. (2012) 
