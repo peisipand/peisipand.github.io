@@ -49,7 +49,7 @@ colorbar('FontName','Times New Roman','fontsize',15)
 caxis([407 414])
 ```
 绘制如图所示
-![picture1](/img/plot_nc.jpg)
+![picture1](/img/OCO-basemap/plot_nc.jpg)
 
 ## 1.2下面是读取h5。
 ```bash
@@ -78,4 +78,4 @@ geobasemap streets
 geolimits('manual')
 geolimits(lat_limit,lon_limit)
 ```
-![picture1](/img/plot_satelite.jpg)
+![picture1](/img/OCO-basemap/plot_satelite.jpg)
