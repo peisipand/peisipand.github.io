@@ -2,7 +2,7 @@
 layout:     post
 title:      个人主页搭建详细教程-基于github仓库和Jekyll
 subtitle:   
-date:       2021-04-12
+date:       2022-04-12
 author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true

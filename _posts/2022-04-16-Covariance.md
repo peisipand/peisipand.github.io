@@ -2,7 +2,7 @@
 layout:     post
 title:      浅谈协方差矩阵(Covariance)
 subtitle:   
-date:       2021-04-16
+date:       2022-04-16
 author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
@@ -126,3 +126,7 @@ for i = 1:50000
 end
 scatter(fx(1,:),fx(2,:))
 ```
+
+# 参考链接
+
+https://www.datalearner.com/blog/1051485590815771

@@ -2,7 +2,7 @@
 layout:     post
 title:      通过Gitbash的方式来管理博客
 subtitle:   
-date:       2021-04-13
+date:       2022-04-13
 author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
