@@ -299,3 +299,31 @@ libpng12.la   libpng.a            libpng.so.3.50.0  libz.so.1.2.10
 经过这次Ubuntu系统上的WRF编译，对这一套流程有了更清晰的认识。
 
 熟能生巧之~
+
+# 五、Ubuntu上运行WRF
+
+之前一直用的WRF3.9版本，这次用的WRF4.4。有些地方还是不太一样的，比如新版本把多个ideal case汇总到了一起，并需要在namelist.input中具体指定。比如我要用的les对应的是9，对应的规则可以参考 README.namelist文件。
+
+```
+ &ideal
+ ideal_case = 9
+ /
+```
+
+```
+mpirun -np 6 ./ideal.exe
+mpirun -np 6 ./wrf.exe
+```
+至于具体选多少核，一是要看自己的硬件，二要根据自己的案例合理设置核数，不一定给的核数越大就会越快。官方给了一个经验法则。
+
+>For your smallest-sized domain:
+>((e_we)/25) * ((e_sn)/25) = most amount of processors you should use
+>
+>For your largest-sized domain:
+>((e_we)/100) * ((e_sn)/100) = least amount of processors you should use
+
+
+```
+查看CPU是几核
+#cat /proc/cpuinfo |grep "cores"|uniq
+```
