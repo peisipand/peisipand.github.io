@@ -314,7 +314,7 @@ libpng12.la   libpng.a            libpng.so.3.50.0  libz.so.1.2.10
 mpirun -np 6 ./ideal.exe
 mpirun -np 6 ./wrf.exe
 ```
-至于具体选多少核，一是要看自己的硬件，二要根据自己的案例合理设置核数，不一定给的核数越大就会越快。官方给了一个经验法则。
+至于具体选多少核，一是要看自己的硬件，二要根据自己的案例合理设置核数，不一定给的核数越大就会越快。[官方](https://forum.mmm.ucar.edu/threads/how-many-processors-should-i-use-to-run-wrf.5082/)介绍了分布式计算的原理（通过将大区域切块）并给了一个经验法则。
 
 >For your smallest-sized domain:
 >((e_we)/25) * ((e_sn)/25) = most amount of processors you should use
