@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      WRF 编译 Ubuntu
+title:      WRF在Ubuntu 22.01.1上编译
 subtitle:   
 date:       2022-11-20
 author:     Peisipand

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      WRF 编译
+title:      WRF在超算上编译
 subtitle:   
 date:       2022-09-02
 author:     Peisipand
@@ -17,6 +17,7 @@ tags:
 （1）加载编译器
 module load openmpi/2.1.5
 （2）下载依赖包存入LIBRARIES中
+
 ```bash
 cd Build_WRF
 mkdir LIBRARIES
