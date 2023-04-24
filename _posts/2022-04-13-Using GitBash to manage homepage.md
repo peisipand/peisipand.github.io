@@ -26,7 +26,7 @@ Ctrl + / 可以查看效果 (Typora)
 # 二、保存之后使用Gitbash上传
 
 ```bash
-git init (或者git clone ***)
+git init (或者 git clone https://github.com/peisipand/peisipand.github.io.git)
 ```
 
 ```bash
