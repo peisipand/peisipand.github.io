@@ -25,7 +25,7 @@ colormap(gray)
 # 一、NCL
 
 [NCL官网](https://blog.csdn.net/peisipand?spm=1001.2101.3001.5343)提供了很多颜色图合集，如下所示
-![picture1](img\MATLAB colormap\ncl.png "图1")
+![picture1](img/MATLAB colormap/ncl.png "图1")
 
 以下是我写的自动从网上获取ncl colormap RGB值的函数。
 
@@ -55,7 +55,7 @@ colormap(ncl_colormap('cmocean_balance'))
 caxis([0 200])
 ```
 
-![picture1](img\MATLAB colormap\ncl_cmocean_balance.jpg "图2")
+![picture1](/img/MATLAB colormap/ncl_cmocean_balance.jpg "图2")
 
 # 二、BREWERMAP
 
@@ -66,12 +66,12 @@ caxis([0 200])
 ```bash
 brewermap_plot
 ```
-![picture1](img\MATLAB colormap\brewermap_plot.jpg "图3")
+![picture1](/img/MATLAB colormap/brewermap_plot.jpg "图3")
 
 ```bash
 brewermap_view
 ```
-![picture1](img\MATLAB colormap\brewermap_view.jpg "图4")
+![picture1](/img/MATLAB colormap/brewermap_view.jpg "图4")
 
 ```bash
 imagesc(column)
@@ -79,7 +79,7 @@ colormap(brewermap(256,'*YlGnBu'));
 caxis([0 200])
 colorbar
 ```
-![picture1](img\MATLAB colormap\brewermap_YlGnBu.jpg "图5")
+![picture1](/img/MATLAB colormap/brewermap_YlGnBu.jpg "图5")
 
 
 
