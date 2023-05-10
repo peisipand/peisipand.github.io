@@ -70,7 +70,8 @@ gittalk为博客下面的评论功能，相当于就是把github中issues的评�
 ### 3.2.2 腾讯域名购买(.top后缀)
 .com .cn这种比较狠的域名肯定就不要想了，买个.top倒还可行，完成个人认证后，.top后缀的域名首年只需**1元**。
 购买过程比较简单，这里就不再描述。[域名注册传送门](https://dnspod.cloud.tencent.com/?from=qcloudHpProductDns/)。
-域名买完之后，DNS的解析和github域名绑定与上节相同。
+域名买完之后，[DNS的解析](https://console.cloud.tencent.com/cns)和github域名绑定与上节相同。
+
 ## 3.3 访问统计
 这个我自己还没摸清楚，申请了Google Analyze的code进行了替换，但是主页还是没效果，之后如果搞定的话会接着分享。
 
