@@ -730,11 +730,6 @@ CONTAINS
    enddo
    ENDIF
 
-! tracer initialization
-
-IF ( (its .LE. 50) .and. (ite .GE. 50) .and. (jts .LE. 50) .and. (jte .GE. 50) ) THEN
-    tracer(50, 1:5, 50, P_plume)  = 1.
-END IF
 
 ! interp v
 

@@ -1,0 +1,131 @@
+ &time_control
+ run_days                            = 0,
+ run_hours                           = 3,
+ run_minutes                         = 10,
+ run_seconds                         = 00,
+ start_year                          = 0001, 0001, 0001, 
+ start_month                         = 01,   01,  01,  
+ start_day                           = 01,   01,   01, 
+ start_hour                          = 00,   00,  00,  
+ start_minute                        = 00,   00,   00,  
+ start_second                        = 00,   00,   00,  
+ end_year                            = 0001, 0001, 0001, 
+ end_month                           = 01,   01,   01,   
+ end_day                             = 01,   01,  01,  
+ end_hour                            = 03,   03,   03, 
+ end_minute                          = 10,   10,  10,  
+ end_second                          = 00,   00,   00,  
+ history_interval_m                  = 60,   60,  60,  
+ history_interval_s                  = 00,   00,  00,  
+ frames_per_outfile                  = 1, 1, 1, 
+ restart                             = .false.,
+ restart_interval_m                  = 60,
+ io_form_history                     = 2
+ io_form_restart                     = 2
+ io_form_input                       = 2
+ io_form_boundary                    = 2
+ debug_level                         = 0
+ iofields_filename                   = "myoutfields_d01.txt", "myoutfields_d02.txt","myoutfields_d03.txt"  ! Name of file that tells WRF what to output
+ ignore_iofields_warning         = .true.
+ io_form_auxhist24                   = 2,                     ! Output stream 24 in netCDF format
+ auxhist24_interval                  = 10, 10, 10, 10                   ! Output stream 24 every 10 minutes
+ frames_per_auxhist24              = 1, 1, 1, 
+ io_form_auxhist23                   = 2,                     ! Output stream 23 in netCDF format
+ auxhist23_interval                  = 720, 720, 720, 720,                   ! Output stream 23 every 12 hours
+ /
+
+ &domains
+ time_step                           = 0,
+ time_step_fract_num                 = 3,
+ time_step_fract_den                 = 10,
+ max_dom                             = 1,
+ s_we                                = 1,     1,    1,
+ e_we                                = 202, 202,
+ s_sn                                = 1,     1,    1,
+ e_sn                                = 202, 202, 
+ s_vert                              = 1,     1,    1,
+ e_vert                              = 51,   51,  51,
+ dx                                  = 30,    
+ dy                                  = 30,   
+ ztop                                = 5000, 5000, 5000,
+ grid_id                             = 1,     2,    3,
+ parent_id                           = 1,     1,    2,
+ i_parent_start                      = 1,    316,  15,  
+ j_parent_start                      = 1,   166,  30,   
+ parent_grid_ratio                   = 1,     3,   3,
+ parent_time_step_ratio              = 1,     3,     3,
+ feedback                            = 0,
+ smooth_option                       = 0
+ /
+
+ &physics
+ mp_physics                          = 0,     0,       0, 
+ ra_lw_physics                       = 0,     0,       0, 
+ ra_sw_physics                       = 0,     0,       0,  
+ radt                                = 0,     0,        0, 
+ sf_sfclay_physics                   = 1,     1,     1,
+ sf_surface_physics                  = 0,     0,      0,   
+ bl_pbl_physics                      = 0,     0,        0, 
+ bldt                                = 0,     0,        0, 
+ cu_physics                          = 0,     0,        0, 
+ cudt                                = 0,     0,      0,   
+ isfflx                              = 2,
+ num_soil_layers                     = 5,
+ /
+
+ &fdda
+ /
+
+ &dynamics
+ tracer_opt = 2, 2, 2
+ rk_ord                              = 3,
+ diff_opt                            = 2,      2,      2,
+ km_opt                              = 2,      2,      2,
+ damp_opt                            = 0,
+ zdamp                               = 5000.,  5000.,  5000.,
+ dampcoef                            = 0.2,    0.2,    0.2,    
+ khdif                               = 1.,      1.,     1.,   
+ kvdif                               = 1.,      1.,     1.,   
+ c_s                                 = 0.18
+ c_k                                 = 0.10
+ mix_isotropic                       = 1
+ smdiv                               = 0.1,    0.1,     0.1, 
+ emdiv                               = 0.01,   0.01,     0.01,
+ epssm                               = 0.1,    0.1,     0.1, 
+ tke_heat_flux                       = 0.24,   0.24,  0.24, 
+ time_step_sound                     = 6,      6,      6, 
+ h_mom_adv_order                     = 5,      5,       5, 
+ v_mom_adv_order                     = 3,      3,       3,  
+ h_sca_adv_order                     = 5,      5,       5,
+ v_sca_adv_order                     = 3,      3,        3,  
+ mix_full_fields                     = .true., .true.,  .true., 
+ non_hydrostatic                     = .true., .true.,  .true., 
+ pert_coriolis                       = .true., .true.,  .true., 
+ use_theta_m                         = 1,
+ /
+
+ &bdy_control
+ periodic_x                          = .false., .false.,.false.,
+ symmetric_xs                        = .false.,.false.,.false.,
+ symmetric_xe                        = .false.,.false.,.false.,
+ open_xs                             = .true.,.false.,.false.,
+ open_xe                             = .true.,.false.,.false.,
+ periodic_y                          = .false., .false.,.false.,
+ symmetric_ys                        = .false.,.false.,.false.,
+ symmetric_ye                        = .false.,.false.,.false.,
+ open_ys                             = .true.,.false.,.false.,
+ open_ye                             = .true.,.false.,.false.,
+ nested                              = .false., .true.,  .true., 
+ /
+
+ &grib2
+ /
+
+ &namelist_quilt
+ nio_tasks_per_group = 0,
+ nio_groups = 1,
+ /
+ 
+ &ideal
+ ideal_case = 9
+ /

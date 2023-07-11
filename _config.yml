@@ -11,7 +11,7 @@ github_repo: "https://github.com/peisipand/peisipand.github.io.git" # you code r
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Selfie in Tibet"
+sidebar-about-description: "雪山前"
 sidebar-avatar: /img/avatar_binggan.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -97,16 +97,19 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "PZP",
-        href: "peisipand.top"
+        title: "我的学术主页",
+        href: "zppei97.github.io"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "Google Scholar",
+        href: "https://scholar.google.com/citations?user=oeNl6iEAAAAJ&hl=zh-CN"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Research Gate",
+        href: "https://www.researchgate.net/profile/Zhipeng-Pei"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "soarli",
+        href: "blog.soarli.top/warehouse.html"
+    },{
+        title: "Guang Xu",
+        href: "https://xg1990.com/blog"
     }
 ]

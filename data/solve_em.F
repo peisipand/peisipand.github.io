@@ -267,22 +267,25 @@ SUBROUTINE solve_em ( grid , config_flags  &
 !------ peisipand Tracers -----------------------------------------
 !-----------------------------------------------------------------------
 
-IF ( config_flags%tracer_opt == 2 ) THEN
-    IF (grid%id == 2 ) THEN
 
-! South Plume
-    DO j = jds + 198, jds +  203, 1
-        DO i = ids + 225, ids + 240, 1
-            IF (ips .LE. i .and. ipe .GE. i .and. jps .LE. j .and. jpe .GE. j ) THEN
-                tracer(i,1,j,P_plume) = 1.
-                tracer(i,2,j,P_plume) = 1.
-                tracer(i,3,j,P_plume) = 1.
-            END IF
-        END DO
-    END DO
 
-    END IF
-END IF
+   IF (config_flags%tracer_opt .eq. 2) THEN
+     DO j = (jde + jds)/2, (jde + jds)/2,  1
+       DO i = 1*(ide + ids)/6, 1*(ide + ids)/6, 1
+          IF ( ips .LE. i .and. ipe .GE. i .and. jps .LE. j .and. jpe .GE. j ) THEN
+            tracer(i, 1, j, P_plume) = 1.
+!                tracer(i, 1, j, P_tr17_2) = 1.
+!                tracer(i, 1, j, P_tr17_3) = 1.
+!                tracer(i, 1, j, P_tr17_4) = 1.
+!                tracer(i, 1, j, P_tr17_5) = 1.
+!                tracer(i, 1, j, P_tr17_6) = 1.
+!                tracer(i, 1, j, P_tr17_7) = 1.
+!                tracer(i, 1, j, P_tr17_8) = 1.
+          END IF
+       END DO
+     END DO
+   END IF
+
 !-----------------------------------------------------------------------
 !------ end -----------------------------------------
 !-----------------------------------------------------------------------
