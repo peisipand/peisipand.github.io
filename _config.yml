@@ -76,7 +76,7 @@ gitalk:
 ba_track_id: 8c7ba653a9d6df3b36b13af7c57f12f1
 # Google Analytics
 ga_track_id: 'UA-224927375-1'            # Format: UA-xxxxxx-xx
-ga_domain: peisipand.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: peisipand.github.io               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -106,10 +106,16 @@ friends: [
         title: "Research Gate",
         href: "https://www.researchgate.net/profile/Zhipeng-Pei"
     },{
-        title: "soarli",
-        href: "blog.soarli.top/warehouse.html"
-    },{
         title: "Guang Xu",
         href: "https://xg1990.com/blog"
+    },{
+        title: "Brian Blaylock",
+        href: "https://home.chpc.utah.edu/~u0553130/Brian_Blaylock/tracer.html"
+    },{
+        title: "黄玄",
+        href: "https://huangxuan.me/"
+    },{
+        title: "soarli",
+        href: "blog.soarli.top/warehouse.html"
     }
 ]
