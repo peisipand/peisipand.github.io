@@ -98,7 +98,7 @@ service-worker: true
 friends: [
     {
         title: "我的学术主页",
-        href: "zppei97.github.io"
+        href: "https://zppei97.github.io"
     },{
         title: "Google Scholar",
         href: "https://scholar.google.com/citations?user=oeNl6iEAAAAJ&hl=zh-CN"
@@ -116,6 +116,6 @@ friends: [
         href: "https://huangxuan.me/"
     },{
         title: "soarli",
-        href: "blog.soarli.top/warehouse.html"
+        href: "https://blog.soarli.top/warehouse.html"
     }
 ]
