@@ -2,7 +2,7 @@
 layout:     post
 title:      根据Plume估计排放速率
 subtitle:   
-date:       2022-09-02
+date:       2023-08-12
 author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
@@ -12,7 +12,7 @@ tags:
 
 
 
-
+根据WRF-LES生成的逐分钟级的Plume，可以用来总结Ueff和U10的关系式，也可以用来模拟给定排放速率下的羽流
 
 
 ---
