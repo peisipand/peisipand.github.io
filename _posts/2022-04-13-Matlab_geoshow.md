@@ -8,7 +8,7 @@ header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
 tags:
     - Matlab
-    - 绘图
+    - Plot
 ---
 
 ---
@@ -28,7 +28,7 @@ ax= worldmap(korea5c,korea5cR) % 缺少这句话直接运行会导致地图上�
 geoshow(korea5c,korea5cR,'DisplayType','texturemap')
 demcmap(korea5c)
 ```
-![picture1](/img/2/korea.jpg)
+![picture1](/img/Matlab_geoshow/korea.jpg)
 
 
 **数据导入部分：**
@@ -86,7 +86,7 @@ geoshow(ax,rivers, 'Color', 'blue')
 cities=shaperead('worldcities.shp','UseGeoCoords',true);
 geoshow(ax,cities,'Marker','.','Color','red')
 ```
-![picture1](/img/2/world.jpg)
+![picture1](/img/Matlab_geoshow/world.jpg)
 
 
 同时worldmap函数支持直接输入经纬度范围，例如：
@@ -96,7 +96,7 @@ latlim=[3 54];
 lonlim=[73 135];
 worldmap(latlim,lonlim)
 ```
-![picture1](/img/2/world_lim.jpg)
+![picture1](/img/Matlab_geoshow/world_lim.jpg)
 
 ```
 clc;clear
@@ -107,7 +107,7 @@ antarctica = shaperead('landareas.shp', 'UseGeoCoords', true,...
   'Selector',{@(name) strcmp(name,'Antarctica'), 'Name'});
 patchm(antarctica.Lat, antarctica.Lon, [0.5 1 0.5]) %把polygon边界的经纬度连起来并用绿色填充
 ```
-![picture1](/img/2/antarctica.jpg)
+![picture1](/img/Matlab_geoshow/antarctica.jpg)
 
 **绘制中国大陆陆地：**
 
@@ -122,7 +122,7 @@ patchm(land.Lat, land.Lon, [0.5 0.7 0.5])
 load coastlines
 plotm(coastlat,coastlon)
 ```
-![picture1](/img/2/china.jpg)
+![picture1](/img/Matlab_geoshow/china.jpg)
 
 **绘制水准面高度**
 
@@ -141,7 +141,7 @@ colormap(C) % 应用颜色
 land=shaperead('landareas.shp','UseGeoCoords',true);
 geoshow(ax,land,'FaceColor',[0.5 0.7 0.5])
 ```
-![picture1](/img/2/geoid60c.jpg)
+![picture1](/img/Matlab_geoshow/geoid60c.jpg)
 **绘制shp**
 
 ```
@@ -162,7 +162,7 @@ C1(:,3)=interp1(0:5,C(:,3),linspace(0,5,numel(states)),'linear')';
 faceColors=makesymbolspec('Polygon',{'INDEX',[1 numel(states)],'FaceColor',C1});
 geoshow(states, 'DisplayType','polygon','SymbolSpec', faceColors)
 ```
-![picture1](/img/2/usamap.jpg)
+![picture1](/img/Matlab_geoshow/usamap.jpg)
 
 **axesm**
 
@@ -194,7 +194,7 @@ load coastlines
 plotm(coastlat,coastlon)
 
 ```
-![picture1](/img/2/ortho.jpg)
+![picture1](/img/Matlab_geoshow/ortho.jpg)
 
 # 二、geoshow on GeographicAxes
 
@@ -233,7 +233,7 @@ geolimits('manual')
 geolimits(lat_limit,lon_limit)
 ```
 
-![picture1](/img/2/plot_satelite.jpg)
+![picture1](/img/Matlab_geoshow/plot_satelite.jpg)
 
 **读取h5的代码**
 ```bash
@@ -283,7 +283,7 @@ colorbar('FontName','Times New Roman','fontsize',15)
 caxis([407 414])
 ```
 绘制如图所示
-![picture1](/img/2/plot_nc.jpg)
+![picture1](/img/Matlab_geoshow/plot_nc.jpg)
 
 ## 3.2绘制栅格数据（以PRISMA为例）
 
@@ -320,4 +320,4 @@ title('CH4 plume');
 set(gca,'fontname','times new roman')
 ```
 
-![picture1](/img/2/PRISMA.jpg)
+![picture1](/img/Matlab_geoshow/PRISMA.jpg)

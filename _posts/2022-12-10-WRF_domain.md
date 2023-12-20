@@ -16,7 +16,7 @@ tags:
 
 
 
-![picture1](/img/WRF-domain/namelist.png)
+![picture1](/img/WRF_domain/namelist.png)
 
 
 

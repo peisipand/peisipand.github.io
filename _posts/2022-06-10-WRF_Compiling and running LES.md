@@ -17,7 +17,7 @@ tags:
 
 WRF模型有两大模拟类型可以生成初始数据，一个是ideal初始化，一个是real初始化。本文将介绍如何利用WRF-LES在指定风速下模拟气体扩散过程，实现以下效果。
 
-![v3_30m_Q1000](/img/6/v3_30m_Q1000.gif)
+![v3_30m_Q1000](/img/WRF_Compiling and running LES/v3_30m_Q1000.gif)
 
 # 一、理想案例（指定风向、风速等）
 ## 1.1 编译
@@ -47,7 +47,7 @@ WRF模型有两大模拟类型可以生成初始数据，一个是ideal初始化
 
    [混合层高度500](/data/input_sounding_500m)、[混合层高度800](/data/input_sounding_800m)、[混合层高度1100](/data/input_sounding_1100m)
 
-   ![picture1](/img/6/1.png)
+   ![picture1](/img/WRF_Compiling and running LES/1.png)
 
    这里需要注意的是第2列是位温Potential temperature (K)，并不直接表示气温。这里间接表示了混合层、逆温层的高度。这里的设置会对垂直方向的扩散有很大影响。如果在给定的不同高度上，气温不断随着高度的升高而升高，那么就意味着气体会不断往上飘，然后程序就该报错了，毕竟更高位置处没有指定气象参数。
 

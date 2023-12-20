@@ -7,7 +7,7 @@ author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
 tags:
-    - 实用教程
+    - Web
 ---
 
 拥有自己的主页是一件很酷的事，可以在里面记录自己的学习过程，记笔记，分享经验，分享生活...
@@ -20,21 +20,21 @@ tags:
 
 ## 1.1、创建仓库
 首先New一个Repository
-![picture1](/img/1/1.jpg)
+![picture1](/img/Web_build_my_homepage/1.jpg)
 
 这里的需要根据自己的 **username** 替换掉我这里的 **peisipand**
-![picture1](/img/1/2.jpg)
+![picture1](/img/Web_build_my_homepage/2.jpg)
 
 ## 1.2 下载模板
 github官方也提供了一些模板，但是颜值不是特别在线，我这里使用的是一位大佬[Hux](https://github.com/Huxpro/huxpro.github.io)上传的一套模板。由于其修改起来非常方便，颜值也非常在线，被很多人当做个人博客[WangPei](https://wangpei.ink/), [qiubaiying](https://qiubaiying.github.io/)的模板。在此表示感谢！
 
 比较简单的下载方式：Code-Download Zip
-![picture1](/img/1/3.jpg)
+![picture1](/img/Web_build_my_homepage/3.jpg)
 
 # 二、在本地修改模板
 ## 2.1最关键信息修改
 下载到本地之后解压，先对最关键的部分(_config.yml)进行修改，这里的 **peisipand** 均需替换成自己的username。（这里我用的是Vscode）。
-![picture1](/img/1/4.jpg)
+![picture1](/img/Web_build_my_homepage/4.jpg)
 
 
 ## 2.2 Push代码到github
@@ -46,7 +46,7 @@ github官方也提供了一些模板，但是颜值不是特别在线，我这�
 # 三、进阶教程
 ## 3.1 照片和文字的替换
 img文件夹中放入自己的照片，主页侧栏的个人照在_config.yml中修改照片路径
-![picture1](/img/1/5.jpg)
+![picture1](/img/Web_build_my_homepage/5.jpg)
 **ABOUT**中的文字个人介绍在*about.html*(需要用Vscode或者记事本打开)中修改, 首页的文字在*index.html*中修改。
 
 ## 3.2 写博客
@@ -54,16 +54,16 @@ img文件夹中放入自己的照片，主页侧栏的个人照在_config.yml中
 ## 3.1 开启gittalk
 gittalk为博客下面的评论功能，相当于就是把github中issues的评论搬到这里。
 第一步：[申请密钥](https://github.com/settings/applications/new)
-![picture1](/img/1/6.jpg)
+![picture1](/img/Web_build_my_homepage/6.jpg)
 这里的Client ID和client secret之后要用到
-![picture1](/img/1/7.jpg)
+![picture1](/img/Web_build_my_homepage/7.jpg)
 第二步：在_config.yml中修改
 同样的，这里的**peisipand** 均需替换成自己的username。Client ID和client secret换成自己的
-![picture1](/img/1/8.jpg)
+![picture1](/img/Web_build_my_homepage/8.jpg)
 
 ## 3.2 域名修改
 目前我的域名还是 peisipand.github.io ，下面介绍如何申请新的域名来指向我的博客。 Setting-Pages-Custom domain 中填入自己申请到的新域名，Save。
-![picture1](/img/1/9.jpg)
+![picture1](/img/Web_build_my_homepage/9.jpg)
 
 ### 3.2.1 免费域名申请
 [freenom](https://my.freenom.com/clientarea.php?action=domains)上可以免费申请域名(.ml 后缀)使用一年，这里我参考了[Leftpocket](https://left-pocket.github.io/post/hugo/hugo_dns/)的博客中 申请域名、DNS解析 部分。
@@ -80,7 +80,7 @@ gittalk为博客下面的评论功能，相当于就是把github中issues的评�
 
 ---
 **Note：** 每次在本地修改完上传github后，github会对这些代码进行编译，如果编译成功（也就是说上传完之后需要等个一分钟左右，主页才会随之更新），才可以通过域名访问到自己的博客。Actions中可以查看编辑是否成功。
-![picture1](/img/1/10.jpg)
+![picture1](/img/Web_build_my_homepage/10.jpg)
 
 # 四、使用编辑器来写Markdown语言的博客
 

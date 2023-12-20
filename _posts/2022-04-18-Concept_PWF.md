@@ -81,7 +81,7 @@ hi(19,1) = 1/2 * hi_pie(18) + (1 - 1/2) * hi_pie(19);
 hi(20,1) = 1/2 * hi_pie(19);
 plot([hi pwf])
 ```
-![picture1](/img/4/1.jpg)
+![picture1](/img/Concept_PWF/1.jpg)
 
 # Reference
 > 1.The ACOS CO2 retrieval algorithm – Part 1: Description and validation against synthetic observations. Connor et al. (2008)
