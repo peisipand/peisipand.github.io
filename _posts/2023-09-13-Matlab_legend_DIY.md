@@ -15,7 +15,7 @@ tags:
 ---
 
 起初是看到Sci. Adv.上一篇论文里的一张图挺好看的，想模仿画一下。
-![picture1](img/Matlab_legend_DIY/SA.png "SA")
+![picture1](/img/Matlab_legend_DIY/SA.png "SA")
 
 当然，如果作图量不大的话，也可以用Arcgis来出图，这篇博客主要介绍用MATLAB如何来实现绘制这种图。
 
@@ -45,7 +45,7 @@ set(objhl(1), 'Markersize', sqrt(360));
 set(objhl(2), 'Markersize', sqrt(100));
 axis([0 3 0 3])
 ```
-![picture1](img/Matlab_legend_DIY/scatter test.png "scatter test")
+![picture1](/img/Matlab_legend_DIY/scatter test.png "scatter test")
 
 这里加上了对lgd position的控制，是因为如果marker size过大时，Legend的行间距并不会跟着变大，就会导致多个marker挤在一起，为了避免这种情况，增加Legend的height即可。
 
@@ -93,7 +93,7 @@ set(objhl(4), 'Markersize', sqrt(400));
 set(objhl(5), 'Markersize', sqrt(500));
 ```
 
-![picture1](img/Matlab_legend_DIY/geoscatter test.png "geoscatter test")
+![picture1](/img/Matlab_legend_DIY/geoscatter test.png "geoscatter test")
 
 
 
@@ -102,7 +102,7 @@ set(objhl(5), 'Markersize', sqrt(500));
 # 一、NCL
 
 [NCL官网](https://blog.csdn.net/peisipand?spm=1001.2101.3001.5343)提供了很多颜色图合集，如下所示
-![picture1](img/Matlab_legend_DIY/ncl.png "图1")
+![picture1](/img/Matlab_legend_DIY/ncl.png "图1")
 
 以下是我写的自动从网上获取ncl colormap RGB值的函数。
 

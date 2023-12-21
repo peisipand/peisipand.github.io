@@ -24,8 +24,8 @@ colormap(gray)
 
 # 一、NCL
 
-[NCL官网](https://blog.csdn.net/peisipand?spm=1001.2101.3001.5343)提供了很多颜色图合集，如下所示
-![picture1](img/Matlab_colormap/ncl.png "图1")
+[NCL官网](https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml)提供了很多颜色图合集，如下所示
+![picture1](/img/Matlab_colormap/ncl.png "图1")
 
 以下是我写的自动从网上获取ncl colormap RGB值的函数。
 

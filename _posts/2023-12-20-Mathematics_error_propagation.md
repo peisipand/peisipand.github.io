@@ -25,15 +25,15 @@ tags:
 
 对于加减法：
 
-![picture1](img/Mathematics_error_propagation/2.png "图2")
+![picture1](/img/Mathematics_error_propagation/2.png "图2")
 
 对于乘法：
 
-![picture1](img/Mathematics_error_propagation/3.png "图3")
+![picture1](/img/Mathematics_error_propagation/3.png "图3")
 
 对于除法：
 
-![picture1](img/Mathematics_error_propagation/4.png "图4")
+![picture1](/img/Mathematics_error_propagation/4.png "图4")
 
 下面是测试代码，可以用来对比传播公式的结果和蒙特卡洛的模拟结果。
 
