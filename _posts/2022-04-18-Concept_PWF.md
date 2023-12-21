@@ -7,7 +7,7 @@ author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
 tags:
-    - 概念理解
+    - Concept
 ---
 
 
