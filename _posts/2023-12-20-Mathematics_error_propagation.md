@@ -19,7 +19,7 @@ tags:
 
 对于多个变量，维基百科中给出了误差传播定律的一般形式。
 
-![picture1](img/Mathematics_error_propagation/1.png "图1")
+![picture1](/img/Mathematics_error_propagation/1.png "图1")
 
 # 常见的双变量
 
