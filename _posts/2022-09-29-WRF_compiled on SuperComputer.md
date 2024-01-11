@@ -8,7 +8,7 @@ header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
 tags:
     - WRF
-    - 超算
+    - LINUX
 ---
 
 
