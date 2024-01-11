@@ -91,7 +91,7 @@ colormap(mycolor)
 h = colorbar;
 ```
 
-![](F:\个人主页_博客\peisipand.github.io\img\WRF_LES PLUME gif\plume_3h.jpg)
+![](\img\WRF_LES PLUME gif\plume_3h.jpg)
 
 # 二、质量变化曲线
 
@@ -133,6 +133,8 @@ plot(mass)
 mass(2) / 10
 (mass(2) - mass(1)) / 10
 ```
+
+![](\img\WRF_LES PLUME gif\mass_time_series.jpg)
 
 # 三、Gif制作
 
@@ -226,7 +228,7 @@ close
 
 效果如图
 
-![](F:\个人主页_博客\peisipand.github.io\img\WRF_LES PLUME gif\v4_30m_Q2000.gif)
+![](\img\WRF_LES PLUME gif\v4_30m_Q2000.gif)
 
 # 引用
 

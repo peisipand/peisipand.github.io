@@ -196,7 +196,7 @@ xlabel('GEOS')
 ylabel('EC')
 ```
 
-![picture 1](F:\个人主页_博客\peisipand.github.io\img\Matlab_IME meteorological parameters\scatter_GEOS_EC.jpg)
+![picture 1](\img\Matlab_IME meteorological parameters\scatter_GEOS_EC.jpg)
 
 这段代码需要运行挺久，耐心等待即可。可以看出：在该位置，GEOS的风速较于EC偏高。
 

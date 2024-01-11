@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Plume Gif 制作
-subtitle:   根据WRF-LES模拟的nc文件生成不同排放流速率下、不同时间戳的柱浓度图像
+title:      总结Ueff和U10的关系
+subtitle:   根据WRF-LES模拟的nc文件,拟合出总结Ueff和U10的关系式
 date:       2024-01-10
 author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
@@ -17,7 +17,6 @@ tags:
 
 ---
 
-    % 利用下载的气象文件里的geopotential计算真实高度
     
 
 
@@ -27,6 +26,9 @@ tags:
 未完待续....
 
 
-# 参考链接
 
-> 1. 
+# 引用
+
+如果你使用了这些代码，请对以下论文施加引用：
+
+> Pei Z, Han G, Mao H, et al. Improving quantification of methane point source emissions from imaging spectroscopy[J]. Remote Sensing of Environment, 2023, 295: 113652.
