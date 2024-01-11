@@ -59,6 +59,7 @@ R = 8.314472; % in J/(mol·K)
 % Avogadro = 6.02214076 * 1e23;
 n = P ./ (R .* T) ; % 理想气体状态方程 PV=nRT  这里假设1m3
 n_total_per_level = n .* layer_height; % in mol
+n_total_air = sum(n_total_per_level); % 3.6055e+05 mol，之后会用到该值
 vertical_mass_of_atmosphere_by_pzp = sum(M_dry * n_total_per_level) ./ 1e3; % in kg
 ```
 

@@ -19,16 +19,14 @@ tags:
 %% 初步测试
 clc;clear
 % 可能需要修改的量
-pixel_res = 30; % 空间分辨率
-emission_per_hour = 2000; % kg/h
-M_gas = 16.04; % CO2:44  CH4:16.04
+pixel_res = 30; % 像素分辨率 in m
+emission_per_hour = 2000; % 排放速率 in kg/h
+M_gas = 16.04; % 摩尔质量 CO2:44  CH4:16.04
 % 第一步，得到缩放因子
-n_total = 3.7052e+05; % in mol
-R = 8.314472; % in J/(mol·K)
 file_path = 'H:\裴志鹏\LES-30m分辨率\v4';
 file_list = dir([file_path,'\','auxhist24_d01_0001-01-01_00_20_00']);
 file_name_20min = [file_list.folder,'\',file_list.name];
-plume_1h = ncread(file_name_20min,'PLUME');  %单位：单位总空气分子中 二氧化碳的分子数。 换句话说，如果空气里全是二氧化碳，该值为1
+plume_20min = ncread(file_name_20min,'PLUME');  %单位：单位总空气分子中 二氧化碳的分子数。 换句话说，如果空气里全是二氧化碳，该值为1
 PB = ncread(file_name_20min,'PB'); % Base-state pressure (Pa, 3d)
 P = ncread(file_name_20min,'P'); % Perturbation pressure (Pa, 3d)
 ptot = P + PB;
@@ -41,11 +39,12 @@ height = permute(height(1,1,:,1),[3 2 1]);
 pressure = permute(ptot(1,1,:,1),[3 2 1]);
 temp = permute(t(1,1,:,1),[3 2 1]);
 % 根据20分钟处的二氧化碳质量，推算每h排放了多少二氧化碳，便于后面的单位变化。
-n_tot_air = pressure ./ (R .* temp) ; % 理想气体状态方程 PV=nRT  这里假设1m3
-re_plume_1h = reshape(plume_1h,size(plume_1h,1) * size(plume_1h,2),50); %把三维的plume reshape成2维的
+R = 8.314472; % in J/(mol·K)
+n_tot_air_each_level = pressure ./ (R .* temp) ; % 理想气体状态方程 PV=nRT  这里假设1m3
+re_plume_1h = reshape(plume_20min,size(plume_20min,1) * size(plume_20min,2),50); %把三维的plume reshape成2维的
 delta_height = diff(height);
 % layer_height = ([0;delta_height] + [delta_height;0]) ./ 2;
-n_tot_gas = reshape(re_plume_1h * (n_tot_air .* delta_height),size(plume_1h,1) , size(plume_1h,2)); % in mol，底面积为1m2，高度为整个空气柱
+n_tot_gas = reshape(re_plume_1h * (n_tot_air_each_level .* delta_height),size(plume_20min,1) , size(plume_20min,2)); % in mol，底面积为1m2，高度为整个空气柱
 % sum(sum(n_tot_ch4))
 mass_tot_ch4 = sum(sum(pixel_res * pixel_res * n_tot_gas * M_gas / 1e3)); % 算上每个像素的面积，in kg
 scale_factor = emission_per_hour / (mass_tot_ch4 * 3) ; %根据 mass_tot_ch4 / 0.33h 的排放速率对应的浓度场， 推算缩放因子
@@ -65,13 +64,13 @@ height = permute(height(1,1,:),[3 2 1]);
 pressure = permute(ptot(1,1,:),[3 2 1]);
 temp = permute(t(100,1,:),[3 2 1]);
 % 根据3h处的二氧化碳质量，推算每h排放了多少二氧化碳，便于后面的单位变化。
-n_tot_air = pressure ./ (R .* temp) ; % 理想气体状态方程 PV=nRT  这里假设1m3
+n_tot_air_each_level = pressure ./ (R .* temp) ; % 理想气体状态方程 PV=nRT  这里假设1m3
 re_plume_3h = reshape(plume_3h,size(plume_3h,1) * size(plume_3h,2),50); %把三维的plume reshape成2维的
 delta_height = diff(height);
-% layer_height = ([0;delta_height] + [delta_height;0]) ./ 2;
-n_tot_gas = reshape(re_plume_3h * (n_tot_air .* delta_height),size(plume_3h,1) , size(plume_3h,2)); % in mol，底面积为1m2，高度为整个空气柱
+n_total_air = 3.6055e+05; % 底面积是 1m2的时候，空气柱中的总分子数：in mol(该值的计算可以参照 IME气象资料的获取一文)
+n_tot_gas = reshape(re_plume_3h * (n_tot_air_each_level .* delta_height),size(plume_3h,1) , size(plume_3h,2)); % in mol，底面积为1m2，高度为整个空气柱
 n_tot_gas = n_tot_gas .* scale_factor; % 缩放后的总质量
-column = (n_tot_gas ./ n_total) .* 1e9 ; % in ppb
+column = (n_tot_gas ./ n_total_air) .* 1e9 ; % in ppb
 imagesc(column)
 caxis([0 600])
 %     m_colmap('jet','step',10)
@@ -89,6 +88,9 @@ ylabel('dy=30 m')
 title(['Input:Q=2000 kg/h.'])
 colormap(mycolor)
 h = colorbar;
+
+omega_a = 1.0374e4;
+[Q,Q_std,mask] = func_IME(column, omega_a, 4,10)
 ```
 
 ![](\img\WRF_LES PLUME gif\plume_3h.jpg)
@@ -139,7 +141,6 @@ mass(2) / 10
 # 三、Gif制作
 
 ```
-% generate_gif.m
 %% 制作gif
 clc;clear
 % 可能需要修改的量
@@ -147,7 +148,7 @@ pixel_res = 30; % 空间分辨率
 emission_per_hour = 2000; % kg/h
 M_gas = 16.04; % CO2:44  CH4:16.04
 % 第一步，得到缩放因子
-n_total = 3.7052e+05; % in mol
+n_total_air = 3.6055e+05; % 底面积是 1m2的时候，空气柱中的总分子数：in mol(该值的计算可以参照 IME气象资料的获取一文)
 R = 8.314472; % in J/(mol·K)
 file_path = 'H:\裴志鹏\LES-30m分辨率\v4';
 file_list = dir([file_path,'\','*00']);
@@ -184,7 +185,7 @@ for m = 1:n
     mass_tot_ch4 = sum(sum(pixel_res * pixel_res * n_tot_gas * M_gas / 1e3)); % 算上每个像素的面积，in kg
     emission_per_hour = 1000; % in kg
     scale_factor = (mass_tot_ch4 / (emission_per_hour * 3)); % 除以3个小时的排放总量 得到缩放因子
-    column = (n_tot_gas ./ n_total) .* 1e9 ./ scale_factor;
+    column = (n_tot_gas ./ n_total_air) .* 1e9 ./ scale_factor;
     imagesc(column);
     caxis([0 600])
     %     date = num2str(12 * m);
