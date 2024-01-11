@@ -1,13 +1,14 @@
 ---
 layout:     post
-title:      Plume Gif 制作
-subtitle:   根据WRF-LES模拟的nc文件生成不同排放流速率下、不同时间戳的柱浓度图像
+title:      IME算法中气象资料的获取
+subtitle:   IME算法中需要用到干空气柱积分质量和有效风速，这篇主要介绍如何获得这些数据。
 date:       2024-01-10
 author:     Peisipand
 header-img: img/art-Anaconda-TensorFlow.jpg
 catalog: true
 tags:
     - WRF
+    - Matlab
 ---
 
 
@@ -148,7 +149,7 @@ mass_of_atmos = mass_of_atmos(index_wind_lat,index_wind_lon);
 end
 ```
 
-2.3 获取某经纬度处的风速
+## 2.3 获取某经纬度处的风速
 
 以上两个函数均用到了 find_index_based_coor 函数，该函数根据输入的经纬度返回行列号。
 
@@ -171,7 +172,7 @@ end
 
 
 
-## 2.3 比较以上两个数据集
+## 2.4 比较以上两个数据集
 
 ```
 clc;clear;
