@@ -4,7 +4,7 @@ title:      个人主页搭建详细教程-基于github仓库和Jekyll
 subtitle:   
 date:       2022-04-12
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Web
