@@ -4,7 +4,7 @@ title:      压力加权函数（Pressure weighting function）的计算
 subtitle:   
 date:       2022-04-18
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Concept

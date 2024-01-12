@@ -4,7 +4,7 @@ title:      对协方差矩阵(Covariance)的一点理解
 subtitle:   
 date:       2022-04-16
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Mathematics

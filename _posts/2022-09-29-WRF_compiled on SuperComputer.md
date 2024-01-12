@@ -4,7 +4,7 @@ title:      WRF在超算上编译
 subtitle:   
 date:       2022-09-02
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - WRF

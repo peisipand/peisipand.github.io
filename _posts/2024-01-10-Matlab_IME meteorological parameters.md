@@ -4,7 +4,7 @@ title:      IME算法中气象资料的获取
 subtitle:   IME算法中需要用到干空气柱积分质量和有效风速，这篇主要介绍如何获得这些数据。
 date:       2024-01-10
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - WRF

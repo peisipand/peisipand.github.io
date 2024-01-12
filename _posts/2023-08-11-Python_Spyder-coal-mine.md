@@ -4,7 +4,7 @@ title:      利用爬虫获取山西能源局提供的煤矿级数据
 subtitle:   
 date:       2023-08-11
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Python

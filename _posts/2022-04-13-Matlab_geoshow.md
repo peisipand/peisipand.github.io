@@ -4,7 +4,7 @@ title:      基于MATLAB的地理数据空间可视化
 subtitle:   本文提供了三种方式来可视化空间数据。
 date:       2022-04-13
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Matlab

@@ -4,7 +4,7 @@ title:      Plume Gif 制作
 subtitle:   根据WRF-LES模拟的nc文件生成不同排放流速率下、不同时间戳的柱浓度图像
 date:       2024-01-10
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - WRF

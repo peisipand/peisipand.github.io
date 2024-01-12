@@ -4,7 +4,7 @@ title:      WRF在Ubuntu 22.01.1上编译
 subtitle:   
 date:       2022-11-20
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - WRF

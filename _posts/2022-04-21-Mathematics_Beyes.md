@@ -4,7 +4,7 @@ title:      最小二乘法和贝叶斯估计
 subtitle:   从概率角度看最小二乘法（least sqaure method）和贝叶斯估计
 date:       2022-04-21
 author:     Peisipand
-header-img: img/art-Anaconda-TensorFlow.jpg
+header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Mathematics
