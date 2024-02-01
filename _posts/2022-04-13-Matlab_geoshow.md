@@ -1,6 +1,5 @@
 ---
 layout:     post
-markdown: kramdown
 title:      基于MATLAB的地理数据空间可视化
 subtitle:   本文提供了三种方式来可视化空间数据。
 date:       2022-04-13
@@ -13,16 +12,60 @@ tags:
 ---
 
 
-# 概览
-|           | geoshow | m_map工具箱 | geoplot等 |
-|:--------:|:--------:| :---------:|:--------:|
-|Matlab自带函数| √ | × | √ |
-|绘制栅格| √ | √ | × |
-|绘制矢量| √ | √ | √ |
-|设置投影| √ | √ | √ |
-|颜值| 🌟🌟🌟 | 🌟🌟🌟🌟🌟 | 🌟🌟🌟 |
+# 三种方法对比
+
+<table>  
+    <thead>    
+        <tr>      
+            <th></th>      
+            <th>geoshow</th>
+            <th>m_map工具箱</th>  
+            <th>geoaxes</th>  
+        </tr>  
+    </thead>  
+    <tbody>    
+        <tr>      
+            <td>Matlab自带函数</td>      
+            <td>√</td>    
+            <td>×</td>      
+            <td>√</td> 
+        </tr>  
+        <tr>      
+            <td>绘制栅格</td>      
+            <td>√</td>    
+            <td>√</td>      
+            <td>×</td> 
+        </tr>  
+        <tr>      
+            <td>绘制矢量</td>      
+            <td>√</td>    
+            <td>√</td>      
+            <td>√</td> 
+        </tr>  
+        <tr>      
+            <td>设置投影</td>      
+            <td>√</td>    
+            <td>√</td>      
+            <td>×</td> 
+        </tr>  
+        <tr>      
+            <td>设置底图</td>      
+            <td>×</td>    
+            <td>×</td>      
+            <td>√</td> 
+        </tr>  
+        <tr>      
+            <td>颜值</td>      
+            <td>🌟🌟🌟</td>    
+            <td>🌟🌟🌟🌟🌟</td>      
+            <td>🌟🌟🌟</td> 
+        </tr>  
+    </tbody>
+</table>
+
 
 # 一、geoshow
+
 ## 1.1 geoshow 绘制 shp
 1. 加载shp文件：
 ```
