@@ -1,5 +1,6 @@
 ---
 layout:     post
+markdown: kramdown
 title:      基于MATLAB的地理数据空间可视化
 subtitle:   本文提供了三种方式来可视化空间数据。
 date:       2022-04-13
