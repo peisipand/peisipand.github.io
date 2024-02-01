@@ -303,6 +303,10 @@ print(gcf, 'prisma.png', '-dpng', '-r300'); % 保存为PNG格式，分辨率为 
 ```
 ![Alt text](/img/Matlab_geoshow/prisma.png)
 
+## 2.3 m_map 只绘制目标区域的栅格
+
+[bugsuse](http://i-lightning.cn/2020/05/matlab_mask/) 公开的他写的函数，可以轻松实现白化。
+
 # 三、geoshow on GeographicAxes
 
 不同于前文提到的 ``axesm`` 创建的 ax 类型坐标区，``geoaxes`` 创建的是 GeographicAxes 类型坐标区。
@@ -352,36 +356,38 @@ lat = double(h5read(filename,'/RetrievalGeometry/retrieval_latitude'));
 lon = double(h5read(filename,'/RetrievalGeometry/retrieval_longitude'));
 ```
 # 补充
->其中可以通过load导入的MATLAB自带数据有：
+其中可以通过load导入的MATLAB自带数据有：
 
-coastlines - 世界海岸线经纬度矢量
-conus - 用于连接的美国(conus)、五大湖、州际边界的经纬度阵列
-geoid60c - 全球大地水准面高度网格（以米为单位）/度
-greatlakes - 显示结构阵列中的北美五大湖
-korea5c - 朝鲜半岛的地形和水深测量
-koreaEQdata - 地震位置和震级
-layermtx - 用于教学的地理定位地形网格
-mapmtx - 用于教学的地理定位地形网格
-moonalb20c - 克莱门汀全球月球反照率图
-moontopo60c - 月球的克莱门汀激光雷达地形
-oceanlo - 显示结构数组中的海洋遮罩多边形
-russia - 网格化土地、水域、边界、外部区域
-seatempm -全球多通道海面温度网格
-stars - 4500+颗恒星的天体坐标和星等
-usamtx - 美国各州的数据网格，每度五个单元格
+- coastlines - 世界海岸线经纬度矢量
+
+- conus - 用于连接的美国(conus)、五大湖、州际边界的经纬度阵列
+- geoid60c - 全球大地水准面高度网格（以米为单位）/度
+- greatlakes - 显示结构阵列中的北美五大湖
+- korea5c - 朝鲜半岛的地形和水深测量
+- koreaEQdata - 地震位置和震级
+- layermtx - 用于教学的地理定位地形网格
+- mapmtx - 用于教学的地理定位地形网格
+- moonalb20c - 克莱门汀全球月球反照率图
+- moontopo60c - 月球的克莱门汀激光雷达地形
+- oceanlo - 显示结构数组中的海洋遮罩多边形
+- russia - 网格化土地、水域、边界、外部区域
+- seatempm -全球多通道海面温度网格
+- stars - 4500+颗恒星的天体坐标和星等
+- usamtx - 美国各州的数据网格，每度五个单元格
+
 usgslulegend - USGS 土地利用类别列表
 
->可以通过shaperead导入的MATLAB自带数据有：
+可以通过shaperead导入的MATLAB自带数据有：
 
-landareas.shp - 全球陆地区域多边形
-tsunamis.shp - 全球1950-2006 年中到大型海啸的百分比
-usastatehi.shp - 高分辨率多边形美国各州形状
-usastatelo.shp - 低多边形美国各州形状
-worldcities.shp - 全球318个城市或人口稠密位置坐标
-worldlakes.shp - 世界上 37 个最大的多边形湖泊和内陆海域
-worldrivers.shp - 世界主要河流的线条形状
-boston_placenames.shp - 美国马萨诸塞州波士顿地名
-boston_roads.shp - 美国马萨诸塞州波士顿道路
-concord_hydro_area.shp - 美国马萨诸塞州康科德水域
-concord_hydro_line.shp - 美国马萨诸塞州康科德水路
-concord_roads.shp - 美国马萨诸塞州康科德道路
+- landareas.shp - 全球陆地区域多边形
+- tsunamis.shp - 全球1950-2006 年中到大型海啸的百分比
+- usastatehi.shp - 高分辨率多边形美国各州形状
+- usastatelo.shp - 低多边形美国各州形状
+- worldcities.shp - 全球318个城市或人口稠密位置坐标
+- worldlakes.shp - 世界上 37 个最大的多边形湖泊和内陆海域
+- worldrivers.shp - 世界主要河流的线条形状
+- boston_placenames.shp - 美国马萨诸塞州波士顿地名
+- boston_roads.shp - 美国马萨诸塞州波士顿道路
+- concord_hydro_area.shp - 美国马萨诸塞州康科德水域
+- concord_hydro_line.shp - 美国马萨诸塞州康科德水路
+- concord_roads.shp - 美国马萨诸塞州康科德道路
