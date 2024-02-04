@@ -380,14 +380,29 @@ usgslulegend - USGS 土地利用类别列表
 可以通过shaperead导入的MATLAB自带数据有：
 
 - landareas.shp - 全球陆地区域多边形
+
 - tsunamis.shp - 全球1950-2006 年中到大型海啸的百分比
+
 - usastatehi.shp - 高分辨率多边形美国各州形状
+
 - usastatelo.shp - 低多边形美国各州形状
+
 - worldcities.shp - 全球318个城市或人口稠密位置坐标
+
 - worldlakes.shp - 世界上 37 个最大的多边形湖泊和内陆海域
+
 - worldrivers.shp - 世界主要河流的线条形状
+
 - boston_placenames.shp - 美国马萨诸塞州波士顿地名
+
 - boston_roads.shp - 美国马萨诸塞州波士顿道路
+
 - concord_hydro_area.shp - 美国马萨诸塞州康科德水域
+
 - concord_hydro_line.shp - 美国马萨诸塞州康科德水路
+
 - concord_roads.shp - 美国马萨诸塞州康科德道路
+
+# 参考链接
+
+[Matlab绘制lambert投影下的中国地图，包含南海诸岛小图 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/447264964)
