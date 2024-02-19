@@ -82,19 +82,19 @@ caxis([-1 1])
 
 [colorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)提供了很多配色方案，MATLAB中，[BREWERMAP](https://www.mathworks.com/matlabcentral/fileexchange/45208-colorbrewer-attractive-and-distinctive-colormaps) 、 [cbrewer2](https://www.mathworks.com/matlabcentral/fileexchange/58350-cbrewer2) 工具包提供了所有 ColorBrewer 配色方案。俩个函数异曲同工，这里以BREWERMAP为例介绍。
 
-![picture1](/img/MMatlab_colormap/brewer_schem.png "图2")
+![picture1](/img/Matlab_colormap/brewer_schem.png "图3")
 
 安装完成后，调用函数即可查看。
 
 ```bash
 brewermap_plot
 ```
-![picture1](/img/Matlab_colormap/brewermap_plot.jpg "图3")
+![picture1](/img/Matlab_colormap/brewermap_plot.jpg "图4")
 
 ```bash
 brewermap_view
 ```
-![picture1](/img/Matlab_colormap/brewermap_view.jpg "图4")
+![picture1](/img/Matlab_colormap/brewermap_view.jpg "图5")
 
 ```
 brewermap(N,scheme)
@@ -114,13 +114,13 @@ colormap(brewermap(256,'*YlGnBu'));
 caxis([0 200])
 colorbar
 ```
-![picture1](/img/Matlab_colormap/brewermap_YlGnBu.jpg "图5")
+![picture1](/img/Matlab_colormap/brewermap_YlGnBu.jpg "图6")
 
 # 三、尖角 colorbar
 
 [cbarrow](https://ww2.mathworks.cn/matlabcentral/fileexchange/52515-cbarrow-pointy-ends-for-colorbars) 提供了绘制尖角colorbar的函数。
 
-![picture1](/img/Matlab_colormap/cbarrow.jpg "图6")
+![picture1](/img/Matlab_colormap/cbarrow.jpg "图7")
 
 
 # 参考链接
