@@ -82,7 +82,7 @@ caxis([-1 1])
 
 [colorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)提供了很多配色方案，MATLAB中，[BREWERMAP](https://www.mathworks.com/matlabcentral/fileexchange/45208-colorbrewer-attractive-and-distinctive-colormaps) 、 [cbrewer2](https://www.mathworks.com/matlabcentral/fileexchange/58350-cbrewer2) 工具包提供了所有 ColorBrewer 配色方案。俩个函数异曲同工，这里以BREWERMAP为例介绍。
 
-![picture1](/img/MATLAB colormap/brewer_schem.png "图2")
+![picture1](/img/MMatlab_colormap/brewer_schem.png "图2")
 
 安装完成后，调用函数即可查看。
 
