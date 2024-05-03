@@ -1,12 +1,14 @@
+---
 layout:     post
 title:      使用MATLAB保存NC文件
-subtitle:   Saving NETCDF file Using MATLAB
+subtitle:   Save NC file Using MATLAB
 date:       2024-05-03
 author:     Peisipand
 header-img: img/wallhaven-dg3opm.jpg
 catalog: true
 tags:
     - Matlab
+---
 
 
 ---
