@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      个人主页搭建详细教程-基于HugoBlox搭建
+title:      个人学术主页搭建详细教程-基于HugoBlox搭建
 subtitle:   
 date:       2024-01-15
 author:     Peisipand

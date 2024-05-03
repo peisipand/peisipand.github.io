@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Plotting 95% Confidence Intervals Around Fitted Line Using MATLAB
-subtitle:   
+title:      使用 MATLAB 绘制拟合线周围的 95% 置信区间
+subtitle:   Plotting 95% Confidence Intervals Around Fitted Line Using MATLAB
 date:       2024-04-29
 author:     Peisipand
 header-img: img/wallhaven-dg3opm.jpg
