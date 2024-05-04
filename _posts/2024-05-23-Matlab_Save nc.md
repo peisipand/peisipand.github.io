@@ -17,7 +17,7 @@ tags:
 
 很多卫星产品和气象模型喜欢使用nc文件类型，其优点是存储高效。NC文件的结构大致为**变量**和**属性**。属性分为**全局属性**和**变量属性**。
 
-1. 创建全局属性
+1.创建全局属性
 
 ```
 copyfile(which("example.nc"),"myfile.nc")
@@ -25,14 +25,14 @@ fileattrib("myfile.nc","+w")
 creationDate = ncreadatt("myfile.nc","/","creation_date")
 ```
 
-2. 修改变量的属性
+2.修改变量的属性
 
 ```
 copyfile(which("example.nc"),"myfile.nc")
 fileattrib("myfile.nc","+w")
 oldDescription = ncreadatt("myfile.nc","peaks","description")
 ```
-3. 以a.nc为样板，创建一个b.nc，并按照修改变量
+3.以a.nc为样板，创建一个b.nc，并按照修改变量
 
 ```
 clc;clear;
