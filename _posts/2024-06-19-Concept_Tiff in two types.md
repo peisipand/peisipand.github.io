@@ -20,5 +20,5 @@ tags:
 
 [Reference raster postings to geographic coordinates](https://ww2.mathworks.cn/help/map/ref/map.rasterref.geographicpostingsreference.html)
 
-![image-20240320161429075](/Users/peisipand/Library/Application Support/typora-user-images/image-20240320161429075.png)
+
 
