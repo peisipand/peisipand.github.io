@@ -154,7 +154,7 @@ $P(A)$ 是一个已知值，所以在写公式的时候很多人会去掉了分�
 
 至于如果准确的计算$\sigma$等于多少的时候，后验概率最大，思路和最小二乘的推导方式是相通的，也是通过先求ln，再求导的方式。
 
-# 二、进一步了解
+# 二、直接看结果
 
 ## 2.1 最小二乘
 
@@ -190,7 +190,7 @@ $$
 x_p={x}_{a}+(K S_a)^T (K{S}_{a}^{-1} K^T + {S}_{o})^{-1} (y-K x_a)
 $$
 
-Where $K$ is the $m\times n$ Jacobian matrix,$S_O$ is the $m\times m$ observational error covariance matrix, $S_a$ is the $n \times n$ prior error covariance matrix, $y$ is the $m \times1$ observation vector, $x$ is the $n \times1$ state vector, $x_a$ is the  $n \times1$ prior state vector.
+Where $K$ is the $m\times n$ Jacobian matrix, $S_O$ is the $m\times m$ observational error covariance matrix, $S_a$ is the $n \times n$ prior error covariance matrix, $y$ is the $m \times1$ observation vector, $x$ is the $n \times1$ state vector, $x_a$ is the  $n \times1$ prior state vector.
 
 Posterior error covariance:
 
