@@ -190,7 +190,7 @@ $$
 x_p={x}_{a}+(K S_a)^T (K{S}_{a}^{-1} K^T + {S}_{o})^{-1} (y-K x_a)
 $$
 
-Where $K$ is the $m\times n$ Jacobian matrix, ${S}_{O}$ is the $m\times m$ observational error covariance matrix, ${S}_{a}$ is the $n \times n$ prior error covariance matrix, $y$ is the $m \times1$ observation vector, $x$ is the $n \times1$ state vector, $x_a$ is the  $n \times1$ prior state vector.
+Where $K$ is the $m\times n$ Jacobian matrix,$S_O$ is the $m\times m$ observational error covariance matrix, $S_a$ is the $n \times n$ prior error covariance matrix, $y$ is the $m \times1$ observation vector, $x$ is the $n \times1$ state vector, $x_a$ is the  $n \times1$ prior state vector.
 
 Posterior error covariance:
 
