@@ -159,10 +159,13 @@ $P(A)$ 是一个已知值，所以在写公式的时候很多人会去掉了分�
 ## 2.1 最小二乘
 
 Cost function: 
+
 $$
 \mathcal{J}(x)=(y-f(x))^T {S}_{O}^{-1}(y-f(x))
 $$
+
 Solution: 
+
 $$
 \hat{x}=(K^T{S}_{O}^{-1} K)^{-1}K^T {S}_{O}^{-1} y
 $$
@@ -170,31 +173,39 @@ $$
 ## 2.2 贝叶斯估计
 
 Cost function: 
+
 $$
 \mathcal{J}(x)= \frac{1}{2}(y-f(x))^T {S}_{O}^{-1}(y-f(x))+\frac{1}{2}(x-x_a)^T {S}_{a}^{-1}(x-x_a)
 $$
+
 Solution 1(观测个数大于未知数个数时，这种形式计算效率更高): 
+
 $$
 x_p={x}_{a}+(K^T{S}_{O}^{-1} K + {S}_{a}^{-1})^{-1}K^T {S}_{O}^{-1} (y-K{x}_{a})
 $$
+
 Solution 2(观测个数小于未知数个数时，这种形式计算效率更高): 
+
 $$
 x_p={x}_{a}+(K S_a)^T (K{S}_{a}^{-1} K^T + {S}_{o})^{-1} (y-K x_a)
 $$
+
 Where $K$ is the $m\times n$ Jacobian matrix, ${S}_{O}$ is the $m\times m$ observational error covariance matrix, ${S}_{a}$ is the $n \times n$ prior error covariance matrix, $y$ is the $m \times1$ observation vector, $x$ is the $n \times1$ state vector, $x_a$ is the  $n \times1$ prior state vector.
 
 Posterior error covariance:
+
 $$
 S_p=(K^T{S}_{O}^{-1} K + {S}_{a}^{-1})^{-1}
 $$
+
 Averaging kernel:
+
 $$
 A=\partial{x_p} / \partial{\bar{x}} \\
 x_p={x}_{a}+(K^T{S}_{O}^{-1} K + {S}_{a}^{-1})^{-1}K^T {S}_{O}^{-1} (K \bar{x} -K{x}_{a})\\
 x_p={x}_{a}+(K^T{S}_{O}^{-1} K + {S}_{a}^{-1})^{-1}K^T {S}_{O}^{-1} K(\bar{x} - {x}_{a})\\
 A = (K^T{S}_{O}^{-1} K + {S}_{a}^{-1})^{-1} K^T{S}_{O}^{-1} K
 $$
-
 
 
 
