@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      最大似然估计、最大后验概率估计、最小二乘法和贝叶斯定理
-subtitle:   MLE, MAP, LSE and Bayes
+subtitle:   MLE, MAP, LSE and Bayes' Theorem
 date:       2024-07-06
 author:     Peisipand
 header-img: img/wallhaven-dg3opm.jpg
@@ -10,7 +10,7 @@ tags:
     - Mathematics
 ---
 
-> 理工科的学习中，无论是机器学习还是大气反演，都可以视为是参数估计问题， 即如何找到 符合观测/符合训练集 的最优的参数。我经常看到的算法有：最小二乘，最小二乘的各种改进版本，贝叶斯估计等。关于这些理论的讲解和博客网上非常多，但很难找到一个详细且易于理解的总结。通过近几年的不断学习，我对这些理论有了越来越深刻的理解，时隔两年重写了这个博客（后续有新的理解会继续更新）。
+> 理工科的学习中，无论是机器学习还是大气反演，都可以视为是参数估计问题， 即如何找到 符合观测/符合训练集 的最优的参数。经常看到的算法有：最小二乘，最小二乘的各种改进版本，贝叶斯估计等。关于这些理论的讲解和博客网上非常多，但很难找到一个详细且易于理解的总结。通过近几年的不断学习，对这些理论逐渐有了越来越深刻的理解，时隔两年重写了这个博客（后续有新的理解会继续更新）。
 
 # 一、抛硬币实验
 
@@ -299,7 +299,7 @@ $$
 
 [一文搞懂极大似然估计 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/26614750)
 
-[最大似然估计 | 鲁老师 (lulaoshi.info)](https://lulaoshi.info/deep-learning/linear-model/maximum-likelihood-estimation.html)
+[最大似然估计，鲁老师 (lulaoshi.info)](https://lulaoshi.info/deep-learning/linear-model/maximum-likelihood-estimation.html)
 
 [详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解-CSDN博客](https://blog.csdn.net/u011508640/article/details/72815981)
 
