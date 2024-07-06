@@ -169,7 +169,7 @@ L(\theta|A)
 \end{equation}
 $$
 
-我们可以画出$L(\theta|A)$的图像：
+我们可以画出 $L(\theta \|A)$ 的图像：
 
 ```
 x = 0:0.01:1; % x 即 theta
