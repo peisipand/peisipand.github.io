@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      最小二乘法和贝叶斯估计
-subtitle:   Least Squares Method and Bayes’ Theorem
+title:      最大似然估计、最大后验概率估计、最小二乘法和贝叶斯定理
+subtitle:   MLE, MAP, LSE and Bayes
 date:       2024-07-6
 author:     Peisipand
 header-img: img/wallhaven-dg3opm.jpg
@@ -21,9 +21,11 @@ tags:
 ##  概率函数 Probability
 
 抛掷10次硬币可能出现不同的情况，可能是“5正5反”、“4正6反”，“10正0反”等。假如我们知道硬币是如何构造的，即已知硬币的参数，那么不同参数 $\theta$ 下，出现“6正4反”的概率为：
+
 $$
 \begin{aligned} & P(6 \text { 正 } 4 \text { 反 } \mid \theta=0.5)=C_{10}^6 \times 0.5^6 \times(1-0.5)^4 \approx 0.2051 \\ & P(6 \text { 正 } 4 \text { 反 } \mid \theta=0.6)=C_{10}^6 \times 0.6^6 \times(1-0.6)^4 \approx 0.2508 \\ & P(6 \text { 正 } 4 \text { 反 } \mid \theta=0.9)=C_{10}^6 \times 0.9^6 \times(1-0.9)^4 \approx 0.0112\end{aligned}
 $$
+
 上面这个公式是概率函数，表示已知参数 $\theta$ ，“6正4反”事件发生的概率。参数 $\theta$  取不同的值时，事件发生的概率不同。在数学上一般使用$P$ 或 $P_r$ 表示概率（Probability）函数。
 
 上述过程中，抛10次硬币，要选出6次正面，使用了排列组合。因为“6正4反”可能会出现 `正正正正正正反反反反`、`正正正正正反正反反反`、`正正正正反正正反反反` 等共 $C_{10}^{6} = 210$ 种组合，要在10次中选出6次为正面。假如每次正面的概率是 $0.6$，那么反面的概率就是($1-0.6$)。每次抛掷硬币的动作是相互独立，互不影响的，“6正4反”发生的概率就是各次抛掷硬币的概率乘积，再乘以210种组合。
@@ -39,19 +41,21 @@ $$
 这里稍微解释一下事件独立性与联合概率之间的关系。如果事件A和事件B相互独立，那么事件A和B同时发生的概率是$ P(A) \times P(B)$。例如，事件“下雨”与事件“地面湿”就不是相互独立的，“下雨”与"地面湿"是同时发生、高度相关的，这两个事件都发生的概率就不能用概率的乘积来表示。两次抛掷硬币相互之间不影响，因此硬币正面朝上的概率可以用各次概率的乘积来表示。
 
 似然函数通常用 $L$ 表示，对应英文 Likelihood。观察到抛硬币“6正4反”的事实，硬币参数取 $\theta$ 不同值时，似然函数表示为：
+
 $$
 L(\theta; 6 \text { 正 } 4 \text { 反 })= C_{10}^6 \times \theta ^6 \times(1-\theta )^4
 $$
 
 这个公式的图形如下图所示。从图中可以看出：参数 $\theta = 0.6$ 时，似然函数最大，参数为其他值时，“6正4反”发生的概率都相对更小。在这个赌局中，我会猜测下次硬币为正，因为根据已有观察，硬币很可能以0.6的概率为正。
 
-![“6正4反”的似然函数](\img\Mathematics_ MLE_MAP_LSM_Bayes\1.jpg)
+![“6正4反”的似然函数](\img\Mathematics_MLE_MAP_LSM_Bayes\1.jpg)
 
 推广到更为一般的场景，似然函数的一般形式可以用下面公式来表示，也就是之前提到的，各个样本发生的概率的乘积。
 
 $$
 L(\theta ; \mathbf{X})=P_1\left(\theta ; X_1\right) \times P_2\left(\theta ; X_2\right) \ldots \times P_n\left(\theta ; X_n\right)=\prod P_i\left(\theta ; X_i\right)
 $$
+
 > 本文公式中变量加粗表示该变量为向量或矩阵
 
 ##  最大似然估计 Maximum Likelihood Estimate (MLE)
@@ -59,12 +63,14 @@ $$
 理解了似然函数的含义，就很容易理解最大似然估计的机制。似然函数是关于模型参数的函数，是描述观察到的真实数据在不同参数下发生的概率。最大似然估计要寻找最优参数，让似然函数最大化。或者说，使用最优参数时观测数据发生的概率最大。
 
 线性回归的误差项 $\epsilon$ 是预测值与真实值之间的差异，如下面公式所示。它可能是一些随机噪音，也可能是线性回归模型没考虑到的一些其他影响因素。
+
 $$
 y^{(i)} = \theta ^Tx^{(i)} + \epsilon^{(i)}
 $$
+
 线性回归的一大假设是：误差 $\epsilon$ 服从均值为0的正态分布，且多个观测数据之间互不影响，相互独立。正态分布（高斯分布）的概率密度公式如下面公式，根据正态分布的公式，可以得到 $\epsilon$ 概率密度。
 
-> 假设 $x$ 服从正态分布，它的均值为 $\mu$ ，方差为 $\sigma$ ，它的概率密度公式如下。公式左侧的 $P(x;\mu,\sigma)$ 表示 $x$ 是随机变量，分号 $;$ 强调 $\mu$ 和$\sigma$ 不是随机变量，而是这个概率密度函数的参数。条件概率函数中使用的 $|$ 竖线有明确的意义，$P(y|x)$ 表示给定 $x$（Given $x$），$y$ 发生的概率（Probability of $y$）。
+假设 $x$ 服从正态分布，它的均值为 $\mu$ ，方差为 $\sigma$ ，它的概率密度公式如下。公式左侧的 $P(x;\mu,\sigma)$ 表示 $x$ 是随机变量，分号 $;$ 强调 $\mu$ 和$\sigma$ 不是随机变量，而是这个概率密度函数的参数。条件概率函数中使用的 $|$ 竖线有明确的意义，$P(y|x)$ 表示给定 $x$（Given $x$），$y$ 发生的概率（Probability of $y$）。
 
 $$
 P(x ; \mu, \sigma)=\frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left(-\frac{(x-\mu)^2}{2 \sigma^2}\right)
@@ -85,13 +91,17 @@ $$
 上式表示给定 $x^{(i)}$，的 $y^{(i)}$概率分布。$\theta$ 并不是随机变量，而是一个参数，所以用分号 $;$ 隔开。或者说 $x^{(i)}$ 和 $\theta$ 不是同一类变量，需要分开单独理解。$P(y^{(i)}|x^{(i)},\theta)$ 则有完全不同的意义，表示 $x^{(i)}$ 和 $\theta$ 同时发生时， $y^{(i)}$ 的概率。
 
 前文提到，似然函数是所观察到的各个样本发生的概率的乘积。一组样本有 $m$ 个观测数据，其中单个观测数据发生的概率为刚刚得到的公式，$m$ 个观测数据的乘积如下所示。
+
 $$
 L(\theta) = L(\theta;\mathbf{X},\mathbf{Y}) = \prod P\left(y^{(i)}|x^{(i)};\theta\right)
 $$
+
 最终，似然函数可以表示成：
+
 $$
 L(\theta) = \prod^m_{i=1}\frac{1}{\sqrt{2\pi} \sigma}exp(-\frac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma^2})
 $$
+
 其中，$x^{(i)}$ 和 $y^{(i)}$ 都是观测到的真实数据，是已知的，$\theta$ 是需要去求解的模型参数。
 
 ## 最小二乘法 Least Sqaure Method (LSM)
@@ -121,26 +131,27 @@ $$
 
 ## 贝叶斯定理 Bayes' Theorem
 
-> 贝叶斯定理如下：
->
-> $$
-> P(A \cap B) = P(A)*P(B|A) = P(B)*P(A|B)
-> $$
->
-> $P(A \cap B)$ 是 $A$ 和 $B$ 同时发生的概率
->
-> $P(A)$ 是 $A$ 发生的概率
->
-> $P(B)$ 是 $B$ 发生的概率
->
-> $P(A|B)$ 是给定 $B$ 的情况下，$A$ 发生的概率
->
-> $P(B|A)$ 是给定 $A$ 的情况下，$B$ 发生的概率
->
-> 该公式可变形为：
-> $$
-> P(A|B)=\frac{P(B|A)*P(A)}{P(B)}
-> $$
+贝叶斯定理如下：
+
+$$
+P(A \cap B) = P(A)*P(B|A) = P(B)*P(A|B)
+$$
+
+$P(A \cap B)$ 是 $A$ 和 $B$ 同时发生的概率
+
+$P(A)$ 是 $A$ 发生的概率
+
+$P(B)$ 是 $B$ 发生的概率
+
+$P(A|B)$ 是给定 $B$ 的情况下，$A$ 发生的概率
+
+$P(B|A)$ 是给定 $A$ 的情况下，$B$ 发生的概率
+
+该公式可变形为：
+
+$$
+P(A|B)=\frac{P(B|A)*P(A)}{P(B)}
+$$
 
 - - -
 
@@ -170,7 +181,7 @@ xlabel('\theta')
 ylabel('likelihood')
 ```
 
-![picture1](\img\Mathematics_ MLE_MAP_LSM_Bayes\2.jpg "图2")
+![picture1](\img\Mathematics_MLE_MAP_LSM_Bayes\2.jpg "图2")
 
 可以看出来大概是在$\theta = 0.7$左右的时候，似然最大。具体 $\theta=$多少时似然最大，可以通过对似然函数求导，令导数等于0得到。
 
@@ -209,15 +220,15 @@ xlabel('\theta')
 ylabel('likelihood')
 ```
 
-![picture1](\img\Mathematics_ Least Squares Method and Bayes\3.jpg "图3")
+![picture3](\img\Mathematics_MLE_MAP_LSM_Bayes\3.jpg "图3")
 
 可以看到使得后验概率最大的$\theta$的值从之前的0.7变到了0.56附近，更加往0.5靠近了。
 
 下面对于不同的$\sigma$做多组实验
 
-![picture1](\img\Mathematics_ Least Squares Method and Bayes\4.jpg "图4")
+![picture4](\img\Mathematics_MLE_MAP_LSM_Bayes\4.jpg "图4")
 
-![picture1](\img\Mathematics_ Least Squares Method and Bayes\5.jpg "图5")
+![picture5](\img\Mathematics_MLE_MAP_LSM_Bayes\5.jpg "图5")
 
 随着$\sigma$的增大，使得后验概率最大的 $\theta$ 会越靠近最大似然估计的结果。
 
