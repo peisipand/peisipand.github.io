@@ -12,7 +12,7 @@ github_repo: "https://github.com/peisipand/peisipand.github.io.git" # you code r
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "雪山前"
-sidebar-avatar: /img/avatar_binggan.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/selfie.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -60,8 +60,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 706e461e44571b9fb31a                            #生成的clientID
-  clientSecret: 6b320c1939ad7f84f8346924c6ebaefbadb1319c    #生成的clientSecret
+  clientID: Ov23li1nDnzcWGBZyurr                            #生成的clientID
+  clientSecret: f4324bf9fbe069f586f4cf98518028089e5335a2    #生成的clientSecret
   repo: peisipand.github.io    #仓库名称
   owner: peisipand     #github用户名
   admin: peisipand
@@ -75,8 +75,8 @@ gitalk:
 # Baidu Analytics
 ba_track_id: 8c7ba653a9d6df3b36b13af7c57f12f1
 # Google Analytics
-ga_track_id: 'UA-224927375-1'            # Format: UA-xxxxxx-xx
-ga_domain: peisipand.github.io               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'G-PFNT535YVF'            # Format: UA-xxxxxx-xx
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 

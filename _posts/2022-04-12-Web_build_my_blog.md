@@ -41,7 +41,7 @@ github官方也提供了一些模板，但是颜值不是特别在线，我这�
 下面需要把这些代码上传到自己的仓库。这里可以利用git bash的方式来上传,git是一个管理代码十分方便的工具。
 1. 首先去Git的[官网](https://git-scm.com/)安装，装完只有在文件管理器右键就可以显示 -Git Bash Here；
 2. 然后在解压后的那个文件夹 右键-Git Bash Here；
-3. 具体如何上传和常见问题解决可以参考[上篇](https://peisipand.top/2021/04/13/GitBash/)
+3. 具体如何上传和常见问题解决可以参考[上篇](https://peisipand.github.io/2024/01/15/Web_build_my_homepage/)
 
 # 三、进阶教程
 ## 3.1 照片和文字的替换
