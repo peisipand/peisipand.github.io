@@ -72,7 +72,7 @@ $$
 
 线性回归的一大假设是：误差 $\epsilon$ 服从均值为0的正态分布，且多个观测数据之间互不影响，相互独立。正态分布（高斯分布）的概率密度公式如下面公式，根据正态分布的公式，可以得到 $\epsilon$ 概率密度。
 
-假设 $x$ 服从正态分布，它的均值为 $\mu$ ，方差为 $\sigma$ ，它的概率密度公式如下。公式左侧的 $P(x;\mu,\sigma)$ 表示 $x$ 是随机变量，分号 $;$ 强调 $\mu$ 和$\sigma$ 不是随机变量，而是这个概率密度函数的参数。条件概率函数中使用的 $\|$ 竖线有明确的意义，$P(y\|x)$ 表示给定 $x$（Given $x$），$y$ 发生的概率（Probability of $y$）。
+假设 $x$ 服从正态分布，它的均值为 $\mu$ ，方差为 $\sigma ^2$ ，它的概率密度公式如下。公式左侧的 $P(x;\mu,\sigma)$ 表示 $x$ 是随机变量，分号 $;$ 强调 $\mu$ 和$\sigma$ 不是随机变量，而是这个概率密度函数的参数。条件概率函数中使用的 $\|$ 竖线有明确的意义，$P(y\|x)$ 表示给定 $x$（Given $x$），$y$ 发生的概率（Probability of $y$）。
 
 $$
 P(x ; \mu, \sigma)=\frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left(-\frac{(x-\mu)^2}{2 \sigma^2}\right)
@@ -248,8 +248,22 @@ $$
 \mathcal{J}(x)=(y-f(x))^T {S}_{O}^{-1}(y-f(x))
 $$
 
-Solution: 
+上式即2.1节最后一个公式，那么当 $\mathcal{J}(x)$ 最小时，$x$ 等于多少呢？
+$$
+f(x) = K x \\
+\mathcal{J}(x)=(K x - y)^T {S}_{O}^{-1}(K x - y) \\
+\text { 记： } V = K x - y \\
+\text { 解 }\frac{\partial{V^T {S}_{O}^{-1} V}}{\partial{x} } = 0 \text { 时的 } x\\
+\frac{\partial{V^T {S}_{O}^{-1} V}}{\partial{x} } = 2 V^T {S}_{O}^{-1} \frac{\partial{V}}{\partial{x}} \\
+V^T {S}_{O}^{-1} K = 0 \\
+\text { 上式转置: } K^T {S}_{O}^{-1} V = 0 \\
+K^T {S}_{O}^{-1} (Kx - y) = 0 \\
+K^T {S}_{O}^{-1} K x - K^T {S}_{O}^{-1} y = 0 \\
+x = (K^T{S}_{O}^{-1} K)^{-1}K^T {S}_{O}^{-1} y
+$$
 
+
+Solution: 
 $$
 \hat{x}=(K^T{S}_{O}^{-1} K)^{-1}K^T {S}_{O}^{-1} y
 $$
