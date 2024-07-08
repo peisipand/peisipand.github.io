@@ -13,8 +13,6 @@ tags:
 
 ---
 
-读论文的时候发现一个好看的图（如下），之前知道这种图用R语言来画非常方便，这次想用MATLAB来实现一下。
-
 很多卫星产品和气象模型喜欢使用nc文件类型，其优点是存储高效。NC文件的结构大致为**变量**和**属性**。属性分为**全局属性**和**变量属性**。
 
 1.创建全局属性
@@ -32,7 +30,7 @@ copyfile(which("example.nc"),"myfile.nc")
 fileattrib("myfile.nc","+w")
 oldDescription = ncreadatt("myfile.nc","peaks","description")
 ```
-3.以a.nc为样板，创建一个b.nc，并按照修改变量
+3.以 `AEMISSIONS.2005010100.24.nc` 为样板，创建一个 `modified.nc`，并根据要求，修改变量。
 
 ```
 clc;clear;
