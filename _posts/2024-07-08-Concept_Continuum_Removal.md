@@ -38,7 +38,19 @@ tags:
 
 ## Google [continuum removal matlab]
 
-搜到 Matlab 2024 提供了相关的工具包
+搜到 [Matlab 2024](https://ww2.mathworks.cn/help/images/ref/removecontinuum.html) 提供了函数 `removeContinuum`
 
-[Normalize spectral signature - MATLAB removeContinuum - MathWorks 中国](https://ww2.mathworks.cn/help/images/ref/removecontinuum.html)
+- 安装 Matlab2024 （老版本不支持）
+
+- 安装 Image Processing Toolbox
+
+- 安装 Hyperspectral Imaging Library for Image Processing Toolbox
+
+```
+continuumRemovedRef = removeContinuum(reflectance,wavelength);
+% Method="subtraction"
+% continuumRemoved = rescale(1- (interpConvHull-reflectances))
+reflectance = double(reflectance);
+plot(wavelength,reflectance)
+```
 
