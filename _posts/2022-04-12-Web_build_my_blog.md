@@ -106,6 +106,14 @@ git commit -m "1st commit"
 git push origin main
 ```
 
+强制上传
+
+```
+git push -f origin main 
+```
+
+
+
 1、main是主分支，还可以建一些其他的分支用于开发。
 2、git push origin main的意思就是上传本地当前分支代码到main分支。git push是上传本地所有分支代码到远程对应的分支上。
 

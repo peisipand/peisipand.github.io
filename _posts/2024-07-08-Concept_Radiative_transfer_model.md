@@ -68,7 +68,7 @@ Given a satellite measured radiance, the surface reflectance can be derived acco
 - [Comprehensive Remote Sensing-Earth’s Energy Budget](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/surface-reflectance) : 地表反射率 (ρ)是指在特定入射或观测情况下（定向、锥形和半球形情况），从地球表面反射的入射太阳辐射的分数。不同入射和观测几何图形的反射率量可明确定义为九种情况（Schaepman-Strub 等人，2006 年）：双向反射率、单向反射率、双向反射率和半球反射率、 2006 年）：双向反射率 (BDR)、定向圆锥反射率 (DCR)、定向半球反射率 (DHR)、圆锥定向反射率 (CDR)、双圆锥反射率 (BCR)、圆锥半球反射率 (CHR)、半球定向反射率 (HDR)、半球定向反射率 (HCR) 和双半球反射率 (BHR)。这些反射率量的命名是根据入射和观察几何形状的组合（以入射观察反射率的形式）制定的。
 - [GEOGRAPHIC INFORMATION SYSTEMS论坛]([remote sensing - Difference between Albedo and Surface Reflectance - Geographic Information Systems Stack Exchange](https://gis.stackexchange.com/questions/36726/difference-between-albedo-and-surface-reflectance)) : 地表反射率是物体反射太阳辐射的能力。 它被描述为辐射波长的函数，并且仅由物体的物理成分决定。
 
-**二者之间的关系：**
+**albedo 和 reflectance 二者之间的关系：**
 
 - [**Relation of reflectivity to albedo** ](https://gis.stackexchange.com/questions/36726/difference-between-albedo-and-surface-reflectance): 反照率(albedo)是入射**太阳辐射光谱成分**与**地表光谱反射率(reflectance)**的集成结果。在大气层外，太阳辐射的光谱成分相对恒定，在约 0.5µm 处达到峰值，在较短波长处迅速减少到 0.2µm 处的少量，在较长波长处减少得较少，在约 4.0µm 处的少量。大气层会选择性地吸收和散射太阳辐射。因此，在地球表面，太阳辐射的光谱组成因大气条件（如云层、水蒸气和尘埃）和太阳高度的不同而有很大差异（Robinson，1966 年；Dickinson，1983 年）。大多数反照率测量都是在晴空万里、太阳高度较高的条件下进行的（表 A15）。在多云条件下，辐射主要来自可见光谱。这降低了土壤和植被的反照率，但增加了雪的反照率（米勒，1981 年）。当大气浊度较高或太阳在天空中的位置较低时，太阳辐射的光谱分布就会转向光谱的红色和红外线部分。土壤和植被反照率增加，雪反照率降低（Kondrotyev，1973 年）。这种变化表明，要评估地球反照率，就必须同时了解地表的光谱反射率和入射辐射的光谱组成。
 
