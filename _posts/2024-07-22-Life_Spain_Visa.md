@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      CSC公派留学|西班牙|博士联合培养|签证办理
-subtitle:   CSC Scholarships|Spain|Doctoral Joint Programs|Visa Application
+subtitle:   CSC|Spain|Doctoral Joint Programs|Visa Application
 date:       2024-07-22
 author:     Peisipand
 header-img: img/wallhaven-dg3opm.jpg
