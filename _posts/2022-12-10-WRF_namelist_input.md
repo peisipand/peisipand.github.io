@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      WRF的嵌套设置
+title:      WRF的namelist.input文件和domain嵌套设置
 subtitle:   
 date:       2022-12-10
 author:     Peisipand
@@ -12,7 +12,7 @@ tags:
 
 
 
-
+https://www2.mmm.ucar.edu/wrf/users/namelist_best_prac_wrf.html
 
 
 
