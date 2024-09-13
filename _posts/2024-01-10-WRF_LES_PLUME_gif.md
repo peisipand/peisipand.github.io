@@ -22,7 +22,8 @@ pixel_res = 30; % 空间分辨率
 emission_per_hour = 2000; % kg/h
 M_gas = 16.04; % CO2:44  CH4:16.04
 %% 第一步，得到缩放因子
-n_total_air = 3.6055e+05; % 底面积是 1m2的时候，空气柱中的总分子数：in mol。该值的计算可以参照 IME气象资料的获取一文（https://peisipand.github.io/2024/01/10/Matlab_IME-meteorological-parameters/）
+n_total_air_1m2 = 3.6055e+05; % 底面积是 1m2的时候，空气柱中的气体的总摩尔数：in mol。
+% 该值的计算可以参照 IME气象资料的获取一文（https://peisipand.github.io/2024/01/10/Matlab_IME_meteorological_parameters/）
 R = 8.314472; % in J/(mol·K)
 file_path = 'H:\裴志鹏\LES-30m分辨率\500m_v4';
 file_name_20min = [file_path,'\auxhist24_d01_0001-01-01_00_20_00'];
